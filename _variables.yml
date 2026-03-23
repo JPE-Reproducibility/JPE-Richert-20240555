@@ -1,6 +1,12 @@
-title: "Stand-in title"
-author: "Dr Prof James 'JayJay' Author"
-paper_id: 12345678
+title: "Quantity Commitments in Multiunit Auctions: Evidence from Credit Event Auctions"
+author: "Richert"
 round: 1
-repo: "https://www.github.com/standin"
-dropbox_rel_path: "JPE/Author-12345678/1"
+repo: "https://github.com/JPE-Reproducibility/JPE-Richert-20240555"
+paper_id: 20240555
+journal: "JPE"
+paper_slug: "Richert-20240555"
+dropbox_download_url: "https://www.dropbox.com/scl/fo/nzc347ged3coza2tt8u8t/ABecBPimRClYOCEuhGervWk?rlkey=8p24ur5hswjf8xk53fnbe8oby&dl=1"
+dropbox_rel_path: "JPE/Richert-20240555/1"
+package_size_gb: 0.01
+package_max_file_size_gb: 2
+package_max_pkg_size_gb: 10
