@@ -237,7 +237,7 @@ for ia=1:size(tempBlist,1)
 end
 utb=unique(tempBlist);
 for jj=1:size(utb,1)
-   for ia=1:size(tempBlist)
+   for ia=1:length(tempBlist)
        if strcmp(tempBlist(ia),utb(jj))
            FSglobalID(ia)=jj;
        end

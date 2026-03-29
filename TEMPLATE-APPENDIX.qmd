@@ -12,10 +12,10 @@ format:
 
 |  |   |
 | ---  |  -------|
-| ID  |  {{< var paper_id >}} |
-| Author  |  {{< var author >}} |
-| Title  |  {{< var title >}} |
-| Iteration |  {{< var round >}} |
+| ID | JPE-Richert-20240555 |
+| Author | Richert, Eric |
+| Title | Quantity Commitments in Multiunit Auctions: Evidence from Credit Event Auctions |
+| Iteration | 1 |
 
 # Report Appendix
 
