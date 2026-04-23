@@ -10,6 +10,8 @@ jobs:
   precheck:
     runs-on: [self-hosted, macOS, ARM64]
     if: github.repository != 'JPE-Reproducibility/JPEtemplate'
+    env:
+      DROPBOX_DOWNLOAD_URL: ${{ secrets.DROPBOX_DOWNLOAD_URL }}
     
     steps:
       - name: Checkout repository
