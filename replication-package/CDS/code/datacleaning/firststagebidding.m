@@ -106,4 +106,4 @@ end
 hitcap=(IMMcap<=aucpricefs).*(NOItot>0)+(IMMcap>=aucpricefs).*(NOItot<0);
 fprintf('  Fraction of bids at price floor/ceiling: %.1f%%\n', 100*sum(immFC'==supplyp)./size(supplyp,1))
 fprintf('  Fraction of auctions clearing at cap: %.1f%%\n', 100*mean(hitcap))
-fprintf('  Fraction at cap conditional on nonzero NOI: %.1f%%\n', 100*sum(hitcap)./sum(NOItot~=0))
+fprintf('  Fraction at cap conditional on nonzero NOI: %.1f%%\n', 100*(sum(hitcap) - sum(hitcap .* (NOItot==0))) ./ sum(NOItot~=0))

@@ -40,7 +40,7 @@ end
 %figure; scatter(supp_bidtrack,supplyp-sup_IMM')
 clear sup_IMM
 
-for aa=1:length(aucidfslist)
+for aa=1:size(aucidfslist,1) %added ,1
     tempS=unique(supp_bidtrack(aucidsupply==aucidfslist(aa)));
     for jj=1:size(tempS,1)
         nstepA(imm_bidtrack==tempS(jj) & aucidfs==aucidfslist(aa))=sum(supp_bidtrack(aucidsupply==aucidfslist(aa))==tempS(jj));

@@ -13,7 +13,7 @@ if exist('resume_from_checkpoint','var') && resume_from_checkpoint
     fprintf('  Resuming from bootstrap checkpoint — skipping parfor\n');
 else
 nbatches=5;
-   if ~exist('bootstrap_seed','var'); bootstrap_seed = 0; end
+   if ~exist('bootstrap_seed','var'); bootstrap_seed = 200; end
    fprintf('  Bootstrap: seed=%d, nbs=%d, nbatches=%d\n', bootstrap_seed, nbs, nbatches);
    sc = parallel.pool.Constant(RandStream('Threefry', 'Seed', bootstrap_seed));
 for kl=1:nbatches

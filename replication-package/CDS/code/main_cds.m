@@ -43,7 +43,7 @@ addpath(fullfile(code_dir, 'cfs'))
 updatedata   = 1;
 bootstrap    = 1;
 runbootstrap  = 1;
-ncores       = 16;
+ncores       = 20;
 nbs          = 200;
 
 %% ================= DIARY LOG ===========================================

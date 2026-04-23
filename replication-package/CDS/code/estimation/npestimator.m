@@ -10,7 +10,7 @@ end
 NOItotexp=NOItotexp';
 Npossibleexp=Npossibleexp';
 
-for aa=1:size(aucidfslist)
+for aa=1:size(aucidfslist,1) %added ,1
     eventlong(aucidfs==aucidfslist(aa))=event(aa);
 end
 eventlong=eventlong';

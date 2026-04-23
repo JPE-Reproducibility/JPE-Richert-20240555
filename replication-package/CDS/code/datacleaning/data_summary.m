@@ -94,13 +94,31 @@ if bond_price_analysis==1
 bondprices
 end
 
+%% ============ SECTION 2: Sample Composition ============
+disp('========== SECTION 2: Sample Composition ==========')
+auction_types = table2array(auctionpriceT(:,3));
+n_lcds = sum(strcmp(auction_types,'LCDS'))+sum(strcmp(auction_types,'ELCDS'));
+n_cds = sum(strcmp(auction_types(1:end-7,:),'CDS'));
+fprintf('  Total credit events: %d\n', size(auctionpriceT(1:end-7,:),1))
+fprintf('  LCDS auctions: %d\n', n_lcds)
+fprintf('  CDS auctions: %d\n', n_cds)
+
 firststagebidding
 
 %% ============ TABLE 1: Initial Stage Quantities (Parker Drilling) ============
 disp('========== TABLE 1: Initial Stage Quantities (Parker Drilling, Auction 200) ==========')
 pd_aucid = 200;
 pd_bidders = table2array(immtab(table2array(immtab(:,end))==pd_aucid, 1));
-pd_noi_vals = table2array(noitab(table2array(noitab(:,3))==pd_aucid, 2));
+pd_noi_names = table2array(noitab(table2array(noitab(:,3))==pd_aucid, 1));
+pd_noi_vals_raw = table2array(noitab(table2array(noitab(:,3))==pd_aucid, 2));
+% Match NOI values to IMM bidder order by name
+pd_noi_vals = zeros(size(pd_bidders));
+for ii=1:size(pd_bidders,1)
+    idx = find(strcmp(pd_noi_names, pd_bidders{ii}));
+    if ~isempty(idx)
+        pd_noi_vals(ii) = pd_noi_vals_raw(idx(1));
+    end
+end
 fprintf('%-50s %12s %12s\n', 'Dealer', 'Bid/Offer', 'Size ($M)')
 for ii=1:size(pd_bidders,1)
     if pd_noi_vals(ii) > 0
@@ -131,6 +149,9 @@ disp('Table 1 saved to output/tables/table1.tex')
 
 %% ============ TABLE 2: Initial Stage Price Quotes (Parker Drilling) ============
 disp('========== TABLE 2: Initial Stage Price Quotes (Parker Drilling, Auction 200) ==========')
+disp('  NOTE: Paper Table 2 modifies bidder 8 (Morgan Stanley) bids -1 cent')
+disp('  and bidder 5 (Goldman Sachs) bids +1 cent to illustrate a crossing.')
+disp('  Raw data values shown below; paper values differ for these two dealers.')
 pd_bids = table2array(immtab(table2array(immtab(:,end))==pd_aucid, 2));
 pd_offers = table2array(immtab(table2array(immtab(:,end))==pd_aucid, 3));
 fprintf('%-50s %8s %8s\n', 'Dealer', 'Bid', 'Offer')
@@ -237,7 +258,7 @@ for ia=1:size(tempBlist,1)
 end
 utb=unique(tempBlist);
 for jj=1:size(utb,1)
-   for ia=1:length(tempBlist)
+   for ia=1:size(tempBlist,1) %added ,1
        if strcmp(tempBlist(ia),utb(jj))
            FSglobalID(ia)=jj;
        end
@@ -253,7 +274,7 @@ end
 
 tempBlist=supplyid;
 for jj=1:size(utb,1)
-   for ia=1:size(tempBlist)
+   for ia=1:size(tempBlist,1) %added ,1
        if strcmp(tempBlist(ia),utb(jj))
            SSglobalID(ia)=jj;
        end
@@ -312,7 +333,7 @@ BKtype=table2array(auctionpriceT(:,11));
 % 2 Restructuring
 % 3 Bankruptcy 11
 % 4 Bankruptcy not 11
-for aa=1:size(aucidfslist)
+for aa=1:size(aucidfslist,1) %added ,1
     if strcmp(eventtype(aucid==aucidfslist(aa)),'Bankruptcy')
         event(aa)=4;
     elseif strcmp(eventtype(aucid==aucidfslist(aa)),'Restructuring')

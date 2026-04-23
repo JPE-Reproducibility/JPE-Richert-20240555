@@ -100,4 +100,4 @@ end
 %% Section 6.1: Status quo auction surplus (per-person * ndealers)
 SQsurp_UB = mean(FS_surp_UB+SS_surp_UB).*11;
 SQsurp_LB = mean(FS_surp_LB+SS_surp_LB).*11;
-fprintf('  Status quo surplus bounds: [$%.0fM, $%.0fM]\n', SQsurp_LB, SQsurp_UB)
+fprintf('  Status quo surplus bounds: [$%.0fM, $%.0fM]\n', SQsurp_LB./100, SQsurp_UB./100)

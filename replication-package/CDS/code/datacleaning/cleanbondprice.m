@@ -134,3 +134,5 @@ disp('cheapest to deliver risk: auction day +30 average sd of prices x bonds con
 mean(BP_sdmeanxbond(BP_sdmeanxbond(:,end)~=0,end))
 disp('cheapest to deliver risk: auction day +5 average sd of prices x bonds conditional on multiple trading')
 mean(BP_sdmeanxbond(BP_sdmeanxbond(:,36)~=0,36))
+fprintf('  Section 6.3: within-day price SD at +5 days: %.2f cents\n', mean(BPsd(BPsd(:,36)~=0,36)))
+fprintf('  Section 6.3: within-day price SD at +30 days: %.2f cents\n', mean(BPsd(BPsd(:,end)~=0,end)))

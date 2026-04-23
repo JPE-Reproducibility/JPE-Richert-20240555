@@ -214,7 +214,7 @@ maxQi(isinf(maxQi))=0;
 nstepA=max(nstepA-1,0);
 %Auction coverage
 aucidsupplyRAW=table2array(supplyfunctab(:,4));
-for ii=1:size(aucidfslist)
+for ii=1:size(aucidfslist,1) %added ,1
     total_coverage(ii,1)=sum(supplyq_RAW(aucidsupplyRAW==aucidfslist(ii)))./NOI(ii);
 end
 total_coverage(isnan(total_coverage))=1;

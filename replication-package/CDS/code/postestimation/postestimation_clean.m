@@ -132,7 +132,7 @@ econdIMM(jj)=sum(IMM.*imw);
 end
 %% ============ SECTION 6.1: Surplus from Reallocation ============
 disp('========== SECTION 6.1: Surplus from Reallocation ==========')
-fprintf('  Truthful bidding surplus bounds: [$%.0fM, $%.0fM]\n', mean(dSurpL), mean(dSurpU))
+fprintf('  Truthful bidding surplus bounds: [$%.0fM, $%.0fM]\n', mean(dSurpL)./100, mean(dSurpU)./100)
 
 %% ============ SECTION 6.2: Price Bias ============
 disp('========== SECTION 6.2: Price Bias ==========')
@@ -283,8 +283,15 @@ hedge_eff_var_opt = vrat(xsol);
 fprintf('  Hedging effectiveness at n=1 (variance): %.1f%%\n', 100*hedge_eff_var_n1)
 fprintf('  Hedging effectiveness at optimal (variance): %.1f%%\n', 100*hedge_eff_var_opt)
 
-
-
+%% ============ SECTION 6.4: CDS Market Impact ============
+disp('========== SECTION 6.4: CDS Market Impact ==========')
+max_coverage = 100*max(hedge_eff_opt_LB, hedge_eff_opt_UB);
+basis_points = abs(mean(aucpricefs) - mean(p_lowimm)) * eix * 100;
+fprintf('  Max insurance coverage: %.1f%%\n', max_coverage)
+fprintf('  Auction bias charge (basis points): %.1f bps\n', basis_points)
+fprintf('  Firm value gain from full insurance (Danis-Gamba scaling): %.2f%% = 2.9/%.1f * (100-%.1f)/100\n', ...
+    2.9/max_coverage*100*(1-max_coverage/100), max_coverage, max_coverage)
+fprintf('  Dollar gain per average firm ($M): %.0f\n', 2.9/max_coverage*100*(1-max_coverage/100)/100*51.2*1000)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %SOME APPENDIX EXERCISES

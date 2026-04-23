@@ -65,7 +65,7 @@ clear opts tbl
 comp_list=unique(company_symbol(ic));
 bonddlocs=table2array(bonddlocs);
 for ii=1:size(bondslist,1)
-    for jk=1:length(bonddlocs)
+    for jk=1:size(bonddlocs,1) %added ,1
         if isequal(bonddlocs{jk},bondslist(ii))
             aucidbond_list(ii)=aucidbonds(jk);
         end

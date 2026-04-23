@@ -3,7 +3,7 @@
 👉 We are considering the file at 
 
 ```
-/Users/florianoswald/actions-runner/_work/JPE-Richert-20240555/JPE-Richert-20240555/replication-package/CDS/README.md 
+/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/README.md 
 ```
 to be the relevant `README`.
 
@@ -19,6 +19,6 @@ The `README` file needs to be placed at the root of your replication package. **
 _Replicator_: The line numbers refer to the readme file printed above.
 
 
-Line 19 : Confidential data used in this paper and not provided as part of the public replication package will be preserved for 5 years after publication, in accordance with journal policies.
-Line 21 : All raw input data are CSV files stored in `confidential-data-not-for-publication/`. The code reads only from this directory.
-Line 127 : +-- confidential-data-not-for-publication/ Raw input data (CSV files)
+Line 17 : Confidential data used in this paper and not provided as part of the public replication package will be preserved for 5 years after publication, in accordance with journal policies. The author will assist with reasonable requests for clarification and replication.
+Line 19 : All raw input data are CSV files stored in `confidential-data-not-for-publication/`. The code reads only from this directory.
+Line 125 : +-- confidential-data-not-for-publication/ Raw input data (CSV files)

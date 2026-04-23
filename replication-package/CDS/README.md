@@ -1,6 +1,4 @@
-# Replication Package
-
-## Quantity Commitments in Multiunit Auctions: Evidence from Credit Event Auctions
+# Code for: Quantity Commitments in Multiunit Auctions: Evidence from Credit Event Auctions
 
 **Author:** Eric Richert
 
@@ -16,7 +14,7 @@ This package contains the code and data to replicate all tables and figures in t
 
 ## Data
 
-Confidential data used in this paper and not provided as part of the public replication package will be preserved for 5 years after publication, in accordance with journal policies.
+Confidential data used in this paper and not provided as part of the public replication package will be preserved for 5 years after publication, in accordance with journal policies. The author will assist with reasonable requests for clarification and replication.
 
 All raw input data are CSV files stored in `confidential-data-not-for-publication/`. The code reads only from this directory. 
 
@@ -96,7 +94,7 @@ This data is accessible to academic researchers, but cannot be reposted publicly
 
 ## Software Requirements
 
-- **MATLAB** The code was run in R2023a
+- **MATLAB** The code must be run in R2023a
 - **Required Toolboxes:**
   - Statistics and Machine Learning Toolbox
   - Optimization Toolbox
@@ -169,7 +167,7 @@ Loads the auction-level CSV data (dealer quotes, net open interest, limit orders
 - `firststagebidding.m` -- Constructs auction-level variables: the Initial Market Midpoint (IMM) from dealer bid/offer quotes, aggregate net open interest (NOI), price cap/floor from ISDA rules, and the final auction clearing price. Links bidders across auction stages (`acrossrounds.m`) to extract each dealer's stage-2 limit order schedule and carried-over IMM bid. Produces Figure OS.7 (auction price vs IMM scatter).
 - `outcomelinks.m` -- Merges auction outcomes with post-auction bond price changes for price discovery analysis.
 
-Produces Tables 1, 2 (Parker Drilling example), OS.1 (eligible bonds), OS.2 (participation), OS.3 (post-auction prices), and Figures OS.4 (purchases), OS.5 (event-type prices). Saves `maindata.mat`.
+Produces Tables 1, 2 (Parker Drilling example), OS.1 (eligible bonds), OS.2 (participation), OS.3 (post-auction prices), and Figures OS.4 (purchases), OS.5 (event-type prices). Saves `maindata.mat`. Note that the tables produced for parker drilling contain the actual data, while results reported in the paper modify bids of bidder 8 and 5 for illustration (as described in the Table notes). The sorted columns of Table 2 are constructed manually from the information in the submissions columns (i.e., sorted bids, orders the bids column from high to low and sorted offers, sorts the offer column from low to high). 
 
 *Runtime: ~30 seconds.*
 

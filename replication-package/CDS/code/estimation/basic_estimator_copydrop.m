@@ -222,7 +222,7 @@ vminda=-abs((imm1cap(kk)-imm(kk))) * 2*4;
         prselT=prselT(ica);
 
         [ownbids,ia, ic]=unique(ownbids,'stable');
-        for ii=1:size(ia)
+        for ii=1:size(ia,1) %added ,1
             ownbidq(ia(ii))=sum(ownbidq(ic==ii));
             prselT(ia(ii))=max(prselT(ic==ii));
             dropk(ia(ii))=max(dropk(ic==ii));

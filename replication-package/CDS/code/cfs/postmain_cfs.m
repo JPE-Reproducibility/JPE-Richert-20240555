@@ -141,4 +141,16 @@ cf_hedge_var_opt = vrat(xsol);
 fprintf('  CF hedging effectiveness at n=1 (variance): %.1f%%\n', 100*cf_hedge_var_n1)
 fprintf('  CF hedging effectiveness at optimal (variance): %.1f%%\n', 100*cf_hedge_var_opt)
 
+%% ============ SECTION 7: CF Incremental Firm Value ============
+disp('========== SECTION 7: CF Incremental Firm Value ==========')
+max_sq_coverage = 100*max(hedge_eff_opt_LB, hedge_eff_opt_UB);
+cf_coverage_LB = 100*cf_hedge_opt_LB;
+cf_coverage_UB = 100*cf_hedge_opt_UB;
+incr_coverage_LB = cf_coverage_LB - max_sq_coverage;
+incr_coverage_UB = cf_coverage_UB - max_sq_coverage;
+fprintf('  Incremental coverage [LB, UB]: [%.1f%%, %.1f%%]\n', incr_coverage_LB, incr_coverage_UB)
+fv_gain_LB = 2.9/0.917 * 0.01 * incr_coverage_LB/100;
+fv_gain_UB = 2.9/0.917 * 0.01 * incr_coverage_UB/100;
+fprintf('  Firm value gain [LB, UB]: [%.2f%%, %.2f%%]\n', fv_gain_LB*100, fv_gain_UB*100)
+fprintf('  Dollar gain per avg firm ($M) [LB, UB]: [%.0f, %.0f]\n', fv_gain_LB*51.2*1000, fv_gain_UB*51.2*1000)
 

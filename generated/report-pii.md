@@ -6,7 +6,7 @@
 - Data files with PII indicators: 5
 - Variables flagged in data: 6
 - Code files with PII references: 54
-- PII references in code: 607
+- PII references in code: 610
 
 ### Summary of Flagged Files
 
@@ -32,7 +32,7 @@
 | Code | `complex_estimator_step1.m` | 71 | lon, lat, city |
 | Code | `complex_estimator_step2.m` | 12 | lon, lat |
 | Code | `complex_estimator_step2b.m` | 11 | lon, lat |
-| Code | `data_summary.m` | 18 | name, block, loc, lat, second |
+| Code | `data_summary.m` | 21 | name, block, loc, lat, second |
 | Code | `debug_bondforestimation.m` | 3 | name |
 | Code | `doubleauctionOuter_1stepspecial_yin.m` | 3 | lat |
 | Code | `dscatter.m` | 11 | loc, location, lon, name, second |

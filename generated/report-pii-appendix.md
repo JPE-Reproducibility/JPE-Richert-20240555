@@ -1,6 +1,6 @@
 ## Appendix: Detailed PII Detection Results
 
-*Generated on 2026-03-23 11:46:34*
+*Generated on 2026-04-23 12:20:27*
 
 This appendix lists all detected instances of potential personally identifiable information (PII) in the project files. Each entry shows the matched PII terms and, for data files, sample values to help verify whether the flagged content is indeed sensitive.
 
@@ -1051,7 +1051,7 @@ This appendix lists all detected instances of potential personally identifiable 
   ```
 - Line 68: loc
   ```
-  for jk=1:size(bonddlocs)
+  for jk=1:size(bonddlocs,1) %added ,1
   ```
 - Line 69: loc
   ```
@@ -1114,43 +1114,55 @@ This appendix lists all detected instances of potential personally identifiable 
   ```
   %IMM calculation
   ```
-- Line 116: lat
+- Line 112: name
+  ```
+  pd_noi_names = table2array(noitab(table2array(noitab(:,3))==pd_aucid, 1));
+  ```
+- Line 114: name
+  ```
+  % Match NOI values to IMM bidder order by name
+  ```
+- Line 117: name
+  ```
+  idx = find(strcmp(pd_noi_names, pd_bidders{ii}));
+  ```
+- Line 134: lat
   ```
   % Save Table 1 as LaTeX
   ```
-- Line 147: lat
+- Line 168: lat
   ```
   % Save Table 2 as LaTeX
   ```
-- Line 180: name
+- Line 201: name
   ```
   OS3_varnames = {'Auction price','IMM price','Constant'};
   ```
-- Line 183: name
+- Line 204: name
   ```
   fprintf('%-20s %8.2f (%4.2f) %8.2f (%4.2f) %8.2f (%4.2f)\n', OS3_varnames{ii}, ...
   ```
-- Line 187: lat
+- Line 208: lat
   ```
   % Save Table OS.3 as LaTeX
   ```
-- Line 193: name
+- Line 214: name
   ```
   fprintf(fid, '%s & %.2f & %.2f & %.2f \\\\\n', OS3_varnames{ii}, be30(ii), be5(ii), be1(ii));
   ```
-- Line 270: second
+- Line 291: second
   ```
   %second column # positive first stage NOI
   ```
-- Line 288: name
+- Line 309: name
   ```
   T.Properties.VariableNames = {'Bidder','Participated','y_i>0','y_i<0','1 step','2 steps','3 steps','
   ```
-- Line 292: lat
+- Line 313: lat
   ```
   % Save Table OS.2 as LaTeX
   ```
-- Line 337: lat
+- Line 358: lat
   ```
   %walk through the auctions and bidders---for each one calculate
   ```
@@ -2363,35 +2375,35 @@ This appendix lists all detected instances of potential personally identifiable 
   ```
   %Optimal hedging position (utility calculation)
   ```
-- Line 305: lon
+- Line 312: lon
   ```
   ew=ew.*normpdf((NOIgrid(jj)-NOIlong')./bwNOI)'; ew=ew./sum(ew);
   ```
-- Line 312: lat, son
+- Line 319: lat, son
   ```
   %crazy extrapolation over that region. --For the same reason we need to be
   ```
-- Line 319: lat
+- Line 326: lat
   ```
   xlabel('$y^\mathcal{N}$','FontSize',14,'interpreter','latex')
   ```
-- Line 333: lat
+- Line 340: lat
   ```
   % Probability of buying back given (1) it is possible, (2) own price quote relative to imm price (3)
   ```
-- Line 336: lon
+- Line 343: lon
   ```
   buyback_possible=(sign(NOIlong)==sign(noi));
   ```
-- Line 339: lon
+- Line 346: lon
   ```
   Xmat=[imm-((immhigh+immlow)./2) abs(NOIlong-noi)];
   ```
-- Line 344: lat
+- Line 351: lat
   ```
   % Exercise 1: something summarizing correlations in v, n?--contour plot the joint distribution--lowe
   ```
-- Line 374: url
+- Line 381: url
   ```
   saveas(gcf,fullfile(fig_path,'contourlow.png'))
   ```

@@ -66,7 +66,7 @@ for kk=1:kft
         prselT=prselT(ica);
 
         [ownbids,ia, ic]=unique(ownbids,'stable');
-        for ii=1:size(ia)
+        for ii=1:size(ia,1) %added ,1
             ownbidq(ia(ii))=sum(ownbidq(ic==ii));
             prselT(ia(ii))=max(prselT(ic==ii));
             coind(ia(ii))=min(coind(ic==ii));
