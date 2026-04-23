@@ -9,3 +9,4 @@ dropbox_rel_path: "JPE/Richert-20240555/2"
 package_size_gb: 0.02
 package_max_file_size_gb: 2
 package_max_pkg_size_gb: 10
+test: flo
