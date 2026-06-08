@@ -17,5 +17,15 @@ rho=linspace(0.2,2,100);
 %.5% of total utility
 bondAuc=prctile(br_qwon,90); 
 rho=linspace(.005,10,100);
-utilratio = mean(1-exp(-rho.*(wealth.*bondInit)))./(1-exp(-rho.*mean(wealth.*bondInit)));
-fprintf('  Utility ratio range [min, max]: [%.4f, %.4f]\n', min(utilratio), max(utilratio))
+% Appendix C.2: expected-utility ratio EU[gamble]/u(mean payout) over the CARA range.
+% Bond-default gamble = wealth x bondInit (avg bond position); auction-outcome gamble =
+% wealth2 x bondAuc (90th-pct auction position). Closer to 1 => more linear (less curvature).
+utilratio     = mean(1-exp(-rho.*(wealth   .*bondInit)))./(1-exp(-rho.*mean(wealth   .*bondInit)));
+utilratio_auc = mean(1-exp(-rho.*(wealth2(:).*bondAuc )))./(1-exp(-rho.*mean(wealth2(:).*bondAuc )));
+fprintf('  C.2 utility ratio over CARA rho in [%.3f, %g]:\n', rho(1), rho(end))
+fprintf('    Auction-outcome gamble: min=%.4f max=%.4f\n', min(utilratio_auc), max(utilratio_auc))
+fprintf('    Bond-default gamble:    min=%.4f max=%.4f\n', min(utilratio), max(utilratio))
+fprintf('    %-8s %12s %12s\n','rho','auction','default')
+for j = round(linspace(1,numel(rho),9))
+    fprintf('    %-8.3f %12.4f %12.4f\n', rho(j), utilratio_auc(j), utilratio(j))
+end

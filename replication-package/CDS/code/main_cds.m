@@ -43,14 +43,15 @@ addpath(fullfile(code_dir, 'cfs'))
 updatedata   = 1;
 bootstrap    = 1;
 runbootstrap  = 1;
-ncores       = 16;
+ncores       = 20;
 nbs          = 200;
 
 %% ================= DIARY LOG ===========================================
+% Single log for the whole run (data prep -> estimation -> CFs -> robustness)
 diary off
-logfile1 = fullfile(log_path, 'cdsresults_log2.txt');
-if exist(logfile1,'file')~=0, delete(logfile1); end
-diary(logfile1)
+logfile = fullfile(log_path, 'cdsresults_log.txt');
+if exist(logfile,'file')~=0, delete(logfile); end
+diary(logfile)
 
 %% ================= BOND PRICE IMPORT ===================================
 % Import and process FINRA TRACE bond price data
@@ -100,11 +101,6 @@ close all
 save(fullfile(int_path,'smc_cfs_np'),'-v7.3')
 
 %% ================= COUNTERFACTUALS (Section 7) =========================
-diary off
-logfile2 = fullfile(log_path, 'cdsresults_log.txt');
-if exist(logfile2,'file')~=0, delete(logfile2); end
-diary(logfile2)
-
 % MAIN SPEC: double auction at each IMM quantile
 sell_limit=median(Bondvol);
 sfrac=1;
@@ -152,11 +148,18 @@ fprintf(fid, '\\hline\\hline\n\\end{tabular}\n\\end{table}\n');
 fclose(fid);
 disp('Table OS.6 saved to output/tables/tableOS6.tex')
 
-% Alternative positions (reduced by 2%) — Appendix D robustness
+% Appendix D.3: Counterfactual allowing for changes in positions (positions reduced 2%)
 sell_limit=median(Bondvol);
 sfrac=1;
 positionschange=1;
 smc_cfs_yin
+
+%% Appendix D.3: double-auction price and SD bounds under changed positions
+D3_price = [min(Pcl) max(Pcl)];
+D3_sd    = [min(sdpcl) max(sdpcl)];
+disp('========== APPENDIX D.3: Counterfactual with Changes in Positions ==========')
+fprintf('  Expected price: [%.2f, %.2f]\n', D3_price)
+fprintf('  Std dev:        [%.2f, %.2f]\n', D3_sd)
 
 %% ================= ROBUSTNESS CHECKS (Appendix) ========================
 robustnesschecks

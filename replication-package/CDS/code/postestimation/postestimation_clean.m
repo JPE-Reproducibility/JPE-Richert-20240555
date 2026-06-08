@@ -237,6 +237,10 @@ lbv=lbvA+(vix+eix.^2).*varLB3;
 %% ============ SECTION 6.3: Risk from Price Uncertainty ============
 disp('========== SECTION 6.3: Risk from Price Uncertainty ==========')
 fprintf('  SD of risk (lower bound): %.2f cents\n', sqrt(min(lbv)))
+% Secondary-market within-day price SD at +5 days (paper comparison), for Section 6.3
+if exist('BPsd','var')
+    fprintf('  Secondary-market within-day price SD at +5 days: %.2f cents\n', mean(BPsd(BPsd(:,36)~=0,36)))
+end
 
 %Optimal hedging position (utility calculation)
 Bpos=100000000;

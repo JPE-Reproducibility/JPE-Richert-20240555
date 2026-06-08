@@ -103,7 +103,6 @@ immFC(aucidsupply==aucidfslist(ii))=IMMcap(ii);
 end
 
 %% Section 2: Price cap statistics
-hitcap=(IMMcap<=aucpricefs).*(NOItot>0)+(IMMcap>=aucpricefs).*(NOItot<0);
 fprintf('  Fraction of bids at price floor/ceiling: %.1f%%\n', 100*sum(immFC'==supplyp)./size(supplyp,1))
-fprintf('  Fraction of auctions clearing at cap: %.1f%%\n', 100*mean(hitcap))
-fprintf('  Fraction at cap conditional on nonzero NOI: %.1f%%\n', 100*(sum(hitcap) - sum(hitcap .* (NOItot==0))) ./ sum(NOItot~=0))
+fprintf('  Fraction of auctions clearing at cap: %.1f%%\n', round(100*mean(sum(aucpricefs==IMMcap)./size(IMMcap,1)),0))
+fprintf('  Fraction at cap conditional on nonzero NOI: %.1f%%\n', round(100*(sum(aucpricefs==IMMcap) - sum((NOItot==0))) ./ sum(NOItot~=0),0))

@@ -1,10 +1,6 @@
 ## Filepaths Analysis Details
 
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/estimation/npestimator.m**
-
-- Line 17, unix : %construct X(NOI,yI) with a row for each unique bidder/auction pair
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/postestimation/robustnesschecks.m**
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/postestimation/robustnesschecks.m**
 
 - Line 78, windows : fprintf('  Correlation of n-bounds (LB): %.4f\n', corr(nout_cs(:,1),nout_ca(:,1)))
 - Line 79, windows : fprintf('  Correlation of n-bounds (UB): %.4f\n', corr(nout_cs(:,2),nout_ca(:,2)))
@@ -13,18 +9,7 @@
 - Line 82, windows : fprintf('  Mean n-bound (LB, baseline):  %.2f\n', mean(nout_ca(:,1)))
 - Line 83, windows : fprintf('  Mean n-bound (UB, baseline):  %.2f\n', mean(nout_ca(:,2)))
 
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/datacleaning/debug_bondforestimation.m**
-
-- Line 27, unix : % Check if varvol/totalvol vary within auction
-- Line 29, windows : fprintf('    varvol varies within auction: %s\n', mat2str(rows.varvol'));
-- Line 32, windows : fprintf('    totalvol varies within auction: %s\n', mat2str(rows.totalvol'));
-- Line 56, windows : fprintf('    mat_years: %s\n', mat2str(mat_years', 4));
-- Line 57, windows : fprintf('    mature_year: %s\n', mat2str(rows.mature_year'));
-- Line 58, windows : fprintf('    T column: %s\n', mat2str(rows.T'));
-- Line 61, windows : fprintf('    simple (mature_year - auction_year): %s\n', mat2str(simple_mat'));
-- Line 62, windows : fprintf('    ref might be: max(simple)=%d min(simple)=%d\n', max(simple_mat), min(simple_mat));
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/estimation/complex_bootstrap.m**
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/estimation/complex_bootstrap.m**
 
 - Line 13, windows : fprintf('  Resuming from bootstrap checkpoint — skipping parfor\n');
 - Line 17, windows : fprintf('  Bootstrap: seed=%d, nbs=%d, nbatches=%d\n', bootstrap_seed, nbs, nbatches);
@@ -33,51 +18,195 @@
 - Line 336, windows : fprintf('  Saved pre_vcorrection.mat checkpoint\n');
 - Line 339, windows : fprintf('  skip_vcorrection=1 — deferring v_correction to next job\n');
 
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/datacleaning/firststagebidding.m**
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/computation/cdf_estimator_imm.m**
+
+- Line 54, unix : % 1. probability of a yd that is negative/positive
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/estimation/basic_estimator.m**
+
+- Line 555, unix : %Finally, add the restrictions for not cornering the mkt at floor/ceiling being optimal AND
+- Line 588, unix : %compute the minimum/maximum
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/datacleaning/acrossrounds.m**
+
+- Line 110, unix : %their noi/auction noi their imm/auction imm/ auction price/max bid,
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/estimation/npestimator.m**
+
+- Line 17, unix : %construct X(NOI,yI) with a row for each unique bidder/auction pair
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/computation/table2latex.m**
+
+- Line 25, unix : %   Date:    09/10/2018                                                   %
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/computation/evalkspdf_num.m**
+
+- Line 23, windows : fprintf('Kernel choice not defined or spelt wrong\n')
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/datacleaning/firststagebidding.m**
 
 - Line 31, unix : %calculate imm/noi
 
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/estimation/complex_estimator_step1.m**
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/computation/weightedcorrs.m**
+
+- Line 32, unix : %   DOI:10.1140/epjb/e2012-20697-x.
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/computation/evalkspdf_denom.m**
+
+- Line 23, windows : fprintf('Kernel choice not defined or spelt wrong\n')
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/datacleaning/bondpriceimport.m**
+
+- Line 89, unix : %compare within/across bond cusips: try to get a reference for CTD vs
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/datacleaning/cleanbondprice.m**
+
+- Line 137, windows : fprintf('  Section 6.3: within-day price SD at +5 days: %.2f cents\n', mean(BPsd(BPsd(:,36)~=0,36)))
+- Line 138, windows : fprintf('  Section 6.3: within-day price SD at +30 days: %.2f cents\n', mean(BPsd(BPsd(:,end)~=0,end)))
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/computation/dscatter.m**
+
+- Line 186, unix : % z = -1:(1/bw):1;
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/computation/cdf_estimator.m**
+
+- Line 34, unix : % 1. probability of a yd that is negative/positive
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/datacleaning/data_summary.m**
+
+- Line 58, windows : fprintf('%-30s %10s %10s %18s\n', '', 'Mean', 'Sd', '[P10, P90]')
+- Line 63, windows : fprintf('N = %d auctions\n', size(OS1_vars,1));
+- Line 68, windows : fprintf(fid, ' & Mean & Sd & $[P_{10}, P_{90}]$ \\\\\n\\hline\n');
+- Line 77, unix : disp('Table OS.1 saved to output/tables/tableOS1.tex')
+- Line 102, windows : fprintf('  Total credit events: %d\n', size(auctionpriceT,1))
+- Line 103, windows : fprintf('  LCDS auctions: %d\n', n_lcds)
+- Line 104, windows : fprintf('  CDS auctions: %d\n', n_cds)
+- Line 122, mixed : fprintf('%-50s %12s %12s\n', 'Dealer', 'Bid/Offer', 'Size ($M)')
+- Line 131, windows : fprintf('%-50s %12s %12.3f\n', pd_bidders{ii}, direction, abs(pd_noi_vals(ii)));
+- Line 133, windows : fprintf('%-50s %12s %12.3f\n', 'Net Open Interest', 'Offer', sum(pd_noi_vals));
+- Line 138, mixed : fprintf(fid, 'Dealer & Bid/Offer & Size (\\$M) \\\\\n\\hline\n');
+- Line 148, unix : disp('Table 1 saved to output/tables/table1.tex')
+- Line 161, unix : % and tex file; pd_bids/pd_offers and all downstream code keep the raw values.
+- Line 176, unix : % Sorted bid/offer columns in the paper's exact order, including its tie order
+- Line 185, windows : fprintf('  %-3s %-44s %6s %6s   %5s %6s   %5s %6s\n', 'ID','Name','Bid','Offer','SrtID','Bid','SrtID','Offer')
+- Line 187, windows : fprintf('  %-3d %-44s %6g %6g   %5d %6g   %5d %6g\n', ii, t2_name{ii}, ...
+- Line 190, windows : fprintf('  IMM = %.2f\n', t2_imm);
+- Line 198, windows : fprintf(fid, 'ID & Name & Bid & Offer & ID & Bid & ID & Offer \\\\\n\\hline\n');
+- Line 206, unix : disp('Table 2 saved to output/tables/table2.tex')
+- Line 229, windows : fprintf('%-20s %14s %14s %14s\n', '', 'After 30 Days', 'After 5 Days', 'After 1 Day')
+- Line 234, windows : fprintf('N = %d\n', size(BPmeanS,1));
+- Line 239, windows : fprintf(fid, ' & Price after 30 Days & Price after 5 Days & Price after 1 Day \\\\\n\\hline\n');
+- Line 248, unix : disp('Table OS.3 saved to output/tables/tableOS3.tex')
+- Line 353, unix : disp('Table OS.2 saved to output/tables/tableOS2.tex')
+- Line 372, unix : elseif strcmp(eventtype(aucid==aucidfslist(aa)),'Repudiation/moratorium')
+- Line 386, unix : %purchase/sold RAW (ie summed with customers)
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/computation/evalkspdf.m**
+
+- Line 23, windows : fprintf('Kernel choice not defined or spelt wrong\n')
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/cfs/doubleauctionOuter_1stepspecial_yin.m**
+
+- Line 24, unix : %26-28 yin construction from linear projection of p/qs
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/postestimation/riskaversion.m**
+
+- Line 2, windows : fprintf('  Variance of baseline wealth: %.6f\n', var(wealth))
+- Line 5, windows : fprintf('  Variance of wealth2 (auction outcomes): %.6f\n', var(wealth2))
+- Line 9, mixed : fprintf('  Variance of wealth2 (H/T doubling): %.6f\n', var(wealth2))
+- Line 10, mixed : fprintf('  Variance ratio (baseline/H-T auction gamble): %.1fx\n', var(wealth)/var(wealth2))
+- Line 11, unix : %double initial position--maximize uncertainty by H/T you get it or not
+- Line 25, windows : fprintf('  C.2 utility ratio over CARA rho in [%.3f, %g]:\n', rho(1), rho(end))
+- Line 26, windows : fprintf('    Auction-outcome gamble: min=%.4f max=%.4f\n', min(utilratio_auc), max(utilratio_auc))
+- Line 27, windows : fprintf('    Bond-default gamble:    min=%.4f max=%.4f\n', min(utilratio), max(utilratio))
+- Line 28, windows : fprintf('    %-8s %12s %12s\n','rho','auction','default')
+- Line 30, windows : fprintf('    %-8.3f %12.4f %12.4f\n', rho(j), utilratio_auc(j), utilratio(j))
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/datacleaning/bondprices.m**
+
+- Line 23, unix : %column for each day plus/minus
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/estimation/basic_estimator_copydrop.m**
+
+- Line 566, unix : %Finally, add the restrictions for not cornering the mkt at floor/ceiling being optimal AND
+- Line 599, unix : %compute the minimum/maximum
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/cfs/weightsolnpricespartialgridINTs1_yin.m**
+
+- Line 106, unix : %Grid/extrap
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/computation/heatscatter.m**
+
+- Line 20, unix : %            plot_colorbar      [double], boolean 0/1, default 1
+- Line 23, unix : %            plot_lsf           [double], boolean 0/1, default 1
+- Line 26, unix : %                                the correlation/p-value of the data
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/computation/histwc.m**
+
+- Line 31, unix : vinterval = linspace(minV, maxV, nbins)-delta/2.0;
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/estimation/complex_estimator_step1.m**
 
 - Line 394, unix : %up/down one
 - Line 594, unix : %Finally, add the restrictions for not cornering the mkt at floor/ceiling being optimal AND
 
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/computation/permn.m**
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/computation/BsplineEval3.m**
 
-- Line 75, unix : %   erroneous values. His excellent solution was to add (1/2) to the values
+- Line 14, unix : %contain the first, second, and/or third derivatives of f at the points in
 
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/postestimation/truthfulpimmcheck.m**
-
-- Line 11, unix : %calculate imm/noi
-- Line 55, windows : fprintf('  P95 benefit of manipulation: %.2f\n', benManipule)
-- Line 56, windows : fprintf('  Mean cost of manipulation: %.0f\n', costManipule)
-- Line 57, mixed : fprintf('  dR/dp_quote (avg effect on IMM): %.4f\n', dRdpquote)
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/computation/cdf_estimator.m**
-
-- Line 34, unix : % 1. probability of a yd that is negative/positive
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/computation/evalkspdf.m**
-
-- Line 23, windows : fprintf('Kernel choice not defined or spelt wrong\n')
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/computation/weightedcorrs.m**
-
-- Line 32, unix : %   DOI:10.1140/epjb/e2012-20697-x.
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/postestimation/round1_quotescalibration.m**
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/postestimation/round1_quotescalibration.m**
 
 - Line 180, windows : fprintf('  Calibrated parameters: sigma_eta=%.2f, mpb=%.1f, sigpb=%.1f\n', sigma_eta, mpb, sigpb)
 
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/estimation/v_correction.m**
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/computation/histwcv.m**
+
+- Line 31, unix : vinterval = linspace(minV, maxV, nbins)-delta/2.0;
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/computation/jacobianest.m**
+
+- Line 67, unix : % Release date: 3/6/2007
+- Line 170, unix : srinv = 1/StepRatio;
+- Line 195, windows : rinv = rromb\eye(nexpon+1);
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/estimation/v_correction.m**
 
 - Line 67, windows : fprintf('  v_correction section 1 complete — saving checkpoint\n');
 
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/computation/evalkspdf_num.m**
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/computation/permn.m**
 
-- Line 23, windows : fprintf('Kernel choice not defined or spelt wrong\n')
+- Line 75, unix : %   erroneous values. His excellent solution was to add (1/2) to the values
 
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/datacleaning/normalize_prices.m**
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/computation/pairwise_jointd_estimator.m**
+
+- Line 35, unix : % 1. probability of a yd that is negative/positive
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/postestimation/postestimation_clean.m**
+
+- Line 142, windows : fprintf('  Position adjustment ratio: %.4f\n', adjpos)
+- Line 190, unix : %since the correlation bounds are positive the var(Pv-n/bP^c) is monotone
+- Line 201, windows : fprintf('%-30s %12s %12s %18s\n', '', 'Mean', 'Variance', 'Cov. Auction Price')
+- Line 202, windows : fprintf('%-30s %12.2f %12.0f %18.0f\n', 'Auction Price', mean(aucpricefs), var(aucpricefs), var(aucpricefs))
+- Line 205, windows : fprintf('%-30s %12.2f %12.0f %18.0f\n', 'Initial Market Price', mean(IMM), var(IMM), T4_covIMMPc)
+- Line 211, windows : fprintf(fid, ' & Mean & Variance & Cov. Auction Price \\\\\n\\hline\n');
+- Line 219, unix : disp('Table 4 saved to output/tables/table4.tex')
+- Line 221, windows : fprintf('  Price bias E[P^c] - E[P^v_LB] = %.2f cents\n', mean(aucpricefs) - mean(p_lowimm))
+- Line 239, windows : fprintf('  SD of risk (lower bound): %.2f cents\n', sqrt(min(lbv)))
+- Line 242, windows : fprintf('  Secondary-market within-day price SD at +5 days: %.2f cents\n', mean(BPsd(BPsd(:,36)~=0,36)))
+- Line 295, windows : fprintf('  Auction bias charge (basis points): %.1f bps\n', basis_points)
+- Line 397, windows : fprintf('  Shading percentiles (LB): P10=%.3f P25=%.3f P50=%.3f P75=%.3f P90=%.3f\n', shad_pctiles(:,1))
+- Line 398, windows : fprintf('  Shading percentiles (UB): P10=%.3f P25=%.3f P50=%.3f P75=%.3f P90=%.3f\n', shad_pctiles(:,2))
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/cfs/smc_cfs_yin.m**
+
+- Line 237, unix : %accept/reject
+- Line 254, windows : if mod(j,25)==0; fprintf('  SMC stage %d/%d, accept=%.2f\n', j, J, AA(j)); end
+- Line 323, windows : fprintf('\n--- CF Results: sell_limit=%d, sfrac=%d, positionschange=%d ---\n', round(sell_limit), sfrac, positionschange)
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/computation/pairwise_jointd_estimator_imm.m**
+
+- Line 40, unix : % 1. probability of a yd that is negative/positive
+
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/datacleaning/normalize_prices.m**
 
 - Line 1, unix : %normalizes prices by price cap/floor
 - Line 24, unix : %expresses NOI as a share of outstanding bonds/outstandingCDS.
@@ -103,321 +232,24 @@
 - Line 431, windows : fprintf(fid, '\\hline\n');
 - Line 437, unix : disp('Table A.1 saved to output/tables/tableA1.tex')
 
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/estimation/basic_estimator.m**
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/main_cds.m**
 
-- Line 555, unix : %Finally, add the restrictions for not cornering the mkt at floor/ceiling being optimal AND
-- Line 588, unix : %compute the minimum/maximum
+- Line 138, windows : fprintf('%-25s %16s %16s %16s\n', '', 'Mean Price', 'SD Price', 'Surplus ($M)')
+- Line 144, windows : fprintf(fid, ' & Mean Price & SD Price & Surplus (\\$M) \\\\\n\\hline\n');
+- Line 149, unix : disp('Table OS.6 saved to output/tables/tableOS6.tex')
 
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/computation/cdf_estimator_imm.m**
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/postestimation/truthfulpimmcheck.m**
 
-- Line 54, unix : % 1. probability of a yd that is negative/positive
+- Line 11, unix : %calculate imm/noi
+- Line 55, windows : fprintf('  P95 benefit of manipulation: %.2f\n', benManipule)
+- Line 56, windows : fprintf('  Mean cost of manipulation: %.0f\n', costManipule)
+- Line 57, mixed : fprintf('  dR/dp_quote (avg effect on IMM): %.4f\n', dRdpquote)
 
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/slurm/job3c_postcfs.m**
-
-- Line 35, windows : fprintf('Started: %s\n\n', datestr(now));
-- Line 49, windows : fprintf('--- Robustness CF: sell_limit=500 — %s ---\n', datestr(now));
-- Line 58, windows : fprintf('  Robustness CF sell_limit=500 done: %.1f hrs\n', toc(t_cf)/3600);
-- Line 61, windows : fprintf('--- Robustness CF: sell_limit=100, sfrac=2 — %s ---\n', datestr(now));
-- Line 81, windows : fprintf('  Robustness CF sell_limit=100 done: %.1f hrs\n', toc(t_cf)/3600);
-- Line 85, windows : fprintf('%-25s %16s %16s %16s\n', '', 'Mean Price', 'SD Price', 'Surplus ($M)')
-- Line 91, windows : fprintf(fid, ' & Mean Price & SD Price & Surplus (\\$M) \\\\\n\\hline\n');
-- Line 96, unix : disp('Table OS.6 saved to output/tables/tableOS6.tex')
-- Line 99, windows : fprintf('--- Robustness CF: positionschange=1 — %s ---\n', datestr(now));
-- Line 118, windows : fprintf('  Robustness CF positionschange done: %.1f hrs\n', toc(t_cf)/3600);
-- Line 121, windows : fprintf('--- robustnesschecks — %s ---\n', datestr(now));
-- Line 124, windows : fprintf('  robustnesschecks: %.1f min\n\n', toc(t_rob)/60);
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/slurm/job3a_postcfs.sh**
-
-- Line 1, unix : #!/bin/bash
-- Line 11, unix : #SBATCH --output=../../output/logs/job3a_%j.out
-- Line 12, unix : #SBATCH --error=../../output/logs/job3a_%j.err
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/computation/pairwise_jointd_estimator.m**
-
-- Line 35, unix : % 1. probability of a yd that is negative/positive
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/datacleaning/bondpriceimport.m**
-
-- Line 89, unix : %compare within/across bond cusips: try to get a reference for CTD vs
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/slurm/job0_validate.sh**
-
-- Line 1, unix : #!/bin/bash
-- Line 11, unix : #SBATCH --output=../../output/logs/job0_%j.out
-- Line 12, unix : #SBATCH --error=../../output/logs/job0_%j.err
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/slurm/job3c_postcfs.sh**
-
-- Line 1, unix : #!/bin/bash
-- Line 11, unix : #SBATCH --output=../../output/logs/job3c_%j.out
-- Line 12, unix : #SBATCH --error=../../output/logs/job3c_%j.err
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/slurm/job2a_estimation.sh**
-
-- Line 1, unix : #!/bin/bash
-- Line 11, unix : #SBATCH --output=../../output/logs/job2a_%j.out
-- Line 12, unix : #SBATCH --error=../../output/logs/job2a_%j.err
-- Line 17, unix : # Requires: intermediate/for211.mat from Job 1
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/slurm/job2b_estimation.m**
-
-- Line 5, unix : % Saves: intermediate/smc_cfs_np.mat
-- Line 50, windows : fprintf('\n--- Loading pre_vcorrection.mat ---\n');
-- Line 62, windows : fprintf('  Checkpoint loaded\n\n');
-- Line 65, unix : %% Recovery: bootstrap done, CIs/step2/v_correction not saved
-- Line 70, windows : fprintf('Started: %s\n\n', datestr(now));
-- Line 73, windows : fprintf('--- Loading for211.mat ---\n');
-- Line 92, windows : fprintf('--- npestimator ---\n');
-- Line 95, windows : fprintf('  npestimator: %.1f min\n\n', toc(t1)/60);
-- Line 98, windows : fprintf('--- Loading bootstrap checkpoint (bsinprogressCCC.mat) ---\n');
-- Line 114, windows : fprintf('--- complex_bootstrap (recovery: skip parfor, rerun rest) ---\n');
-- Line 119, windows : fprintf('  complex_bootstrap total: %.1f hrs\n\n', toc(t2)/3600);
-- Line 122, windows : fprintf('--- Saving smc_cfs_np.mat ---\n');
-- Line 134, windows : fprintf('--- v_correction ---\n');
-- Line 137, windows : fprintf('  v_correction: %.1f hrs\n\n', toc(t3)/3600);
-- Line 141, windows : fprintf('--- complex_bootstrap_pe_outputs ---\n');
-- Line 145, windows : fprintf('--- Saving smc_cfs_np.mat ---\n');
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/datacleaning/cleanbondprice.m**
-
-- Line 137, windows : fprintf('  Section 6.3: within-day price SD at +5 days: %.2f cents\n', mean(BPsd(BPsd(:,36)~=0,36)))
-- Line 138, windows : fprintf('  Section 6.3: within-day price SD at +30 days: %.2f cents\n', mean(BPsd(BPsd(:,end)~=0,end)))
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/cfs/weightsolnpricespartialgridINTs1_yin.m**
-
-- Line 106, unix : %Grid/extrap
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/computation/pairwise_jointd_estimator_imm.m**
-
-- Line 40, unix : % 1. probability of a yd that is negative/positive
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/slurm/job1_dataprep.sh**
-
-- Line 1, unix : #!/bin/bash
-- Line 12, unix : #SBATCH --output=../../output/logs/job1_%j.out
-- Line 13, unix : #SBATCH --error=../../output/logs/job1_%j.err
-- Line 18, unix : # Output: intermediate/maindata.mat, intermediate/for211.mat
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/slurm/job1_dataprep.m**
-
-- Line 3, unix : % Saves: intermediate/maindata.mat, intermediate/for211.mat
-- Line 44, windows : fprintf('Started: %s\n\n', datestr(now));
-- Line 47, windows : fprintf('--- bondpriceimport ---\n');
-- Line 50, mixed : fprintf('  bondpriceimport: %.1f min\n\n', toc/60);
-- Line 53, windows : fprintf('--- data_summary ---\n');
-- Line 58, windows : fprintf('  data_summary: %.1f sec\n\n', toc(t1));
-- Line 63, windows : fprintf('--- normalize_prices ---\n');
-- Line 66, windows : fprintf('  normalize_prices: %.1f sec\n\n', toc(t2));
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/cfs/doubleauctionOuter_1stepspecial_yin.m**
-
-- Line 24, unix : %26-28 yin construction from linear projection of p/qs
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/slurm/job0_validate.m**
-
-- Line 5, windows : fprintf('Host: %s\n', getenv('HOSTNAME'));
-- Line 6, windows : fprintf('PWD:  %s\n', pwd);
-- Line 7, windows : fprintf('Date: %s\n\n', datestr(now));
-- Line 17, windows : fprintf('--- Data files (%s) ---\n', data_path);
-- Line 24, windows : fprintf('  FAIL %-35s NOT FOUND\n', data_files{i});
-- Line 30, windows : fprintf('\n--- Code directories ---\n');
-- Line 31, unix : code_dirs = {'code/computation', 'code/datacleaning', 'code/estimation', ...
-- Line 32, unix : 'code/postestimation', 'code/cfs'};
-- Line 39, windows : fprintf('  FAIL %-30s NOT FOUND\n', code_dirs{i});
-- Line 45, windows : fprintf('\n--- Critical code files ---\n');
-- Line 46, unix : critical = {'code/datacleaning/bondpriceimport.m', ...
-- Line 47, unix : 'code/datacleaning/data_summary.m', ...
-- Line 48, unix : 'code/datacleaning/normalize_prices.m', ...
-- Line 49, unix : 'code/estimation/npestimator.m', ...
-- Line 50, unix : 'code/estimation/complex_bootstrap.m', ...
-- Line 51, unix : 'code/estimation/complex_estimator_step1.m', ...
-- Line 52, unix : 'code/estimation/complex_estimator_step2.m', ...
-- Line 53, unix : 'code/estimation/complex_estimator_step2b.m', ...
-- Line 54, unix : 'code/estimation/v_correction.m', ...
-- Line 55, unix : 'code/estimation/complex_bootstrap_pe_outputs.m', ...
-- Line 56, unix : 'code/postestimation/postestimation_clean.m', ...
-- Line 57, unix : 'code/postestimation/robustnesschecks.m', ...
-- Line 58, unix : 'code/cfs/smc_cfs_yin.m', ...
-- Line 59, unix : 'code/cfs/postmain_cfs.m', ...
-- Line 60, unix : 'code/computation/nearestSPD.m'};
-- Line 64, windows : fprintf('  OK  %s\n', critical{i});
-- Line 66, windows : fprintf('  FAIL %s NOT FOUND\n', critical{i});
-- Line 72, windows : fprintf('\n--- Output directory ---\n');
-- Line 85, windows : fprintf('  OK  output/ writable\n');
-- Line 88, windows : fprintf('\n--- MATLAB toolboxes ---\n');
-- Line 94, windows : fprintf('  OK  %s\n', needed{i});
-- Line 104, windows : fprintf('  OK  parpool creation works\n');
-- Line 106, windows : fprintf('  FAIL parpool: %s\n', e.message);
-- Line 111, windows : fprintf('\n--- Quick data load test ---\n');
-- Line 114, windows : fprintf('  OK  auctionlistid.csv: %d rows, %d cols\n', size(t,1), size(t,2));
-- Line 116, windows : fprintf('  FAIL %s\n', e.message);
-- Line 123, windows : fprintf('  ALL CHECKS PASSED — safe to submit jobs\n');
-- Line 125, windows : fprintf('  %d CHECKS FAILED — fix before submitting\n', nfail);
-- Line 133, windows : fprintf('  %s line %d\n', e.stack(1).file, e.stack(1).line);
-- Line 139, unix : s = sprintf('%.1f GB', b/1e9);
-- Line 141, unix : s = sprintf('%.1f MB', b/1e6);
-- Line 143, unix : s = sprintf('%.1f KB', b/1e3);
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/slurm/job3b_postcfs.sh**
-
-- Line 1, unix : #!/bin/bash
-- Line 11, unix : #SBATCH --output=../../output/logs/job3b_%j.out
-- Line 12, unix : #SBATCH --error=../../output/logs/job3b_%j.err
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/slurm/job2a_estimation.m**
-
-- Line 41, windows : fprintf('Started: %s\n\n', datestr(now));
-- Line 44, windows : fprintf('--- Loading for211.mat ---\n');
-- Line 66, windows : fprintf('--- npestimator ---\n');
-- Line 69, windows : fprintf('  npestimator: %.1f sec\n\n', toc(t1));
-- Line 73, windows : fprintf('--- complex_bootstrap (skip_vcorrection=1) ---\n');
-- Line 76, windows : fprintf('  complex_bootstrap: %.1f hrs\n\n', toc(t2)/3600);
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/computation/evalkspdf_denom.m**
-
-- Line 23, windows : fprintf('Kernel choice not defined or spelt wrong\n')
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/cfs/smc_cfs_yin.m**
-
-- Line 237, unix : %accept/reject
-- Line 254, windows : if mod(j,25)==0; fprintf('  SMC stage %d/%d, accept=%.2f\n', j, J, AA(j)); end
-- Line 323, windows : fprintf('\n--- CF Results: sell_limit=%d, sfrac=%d, positionschange=%d ---\n', round(sell_limit), sfrac, positionschange)
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/main_cds.m**
-
-- Line 142, windows : fprintf('%-25s %16s %16s %16s\n', '', 'Mean Price', 'SD Price', 'Surplus ($M)')
-- Line 148, windows : fprintf(fid, ' & Mean Price & SD Price & Surplus (\\$M) \\\\\n\\hline\n');
-- Line 153, unix : disp('Table OS.6 saved to output/tables/tableOS6.tex')
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/computation/histwc.m**
-
-- Line 31, unix : vinterval = linspace(minV, maxV, nbins)-delta/2.0;
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/computation/BsplineEval3.m**
-
-- Line 14, unix : %contain the first, second, and/or third derivatives of f at the points in
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/cfs/postmain_cfs.m**
+**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-3/replication-package/CDS/code/cfs/postmain_cfs.m**
 
 - Line 64, windows : fprintf('%-30s %16s %16s %18s %16s\n', '', 'Mean', 'Variance', 'Cov(P^c,P^v)', 'Surplus')
 - Line 71, windows : fprintf(fid, ' & Mean & Variance & Cov$(P^c, P^v)$ & Surplus \\\\\n\\hline\n');
 - Line 76, unix : disp('Table 5 saved to output/tables/table5.tex')
 - Line 81, windows : fprintf('  CF price bias (E[P^v_LB] - E[P^DA_UB]): %.2f cents\n', pbiasCF)
 - Line 97, windows : fprintf('  CF SD of risk (lower bound): %.2f cents\n', sqrt(min(lbvcf)))
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/computation/dscatter.m**
-
-- Line 186, unix : % z = -1:(1/bw):1;
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/datacleaning/bondprices.m**
-
-- Line 23, unix : %column for each day plus/minus
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/postestimation/riskaversion.m**
-
-- Line 2, windows : fprintf('  Variance of baseline wealth: %.6f\n', var(wealth))
-- Line 5, windows : fprintf('  Variance of wealth2 (auction outcomes): %.6f\n', var(wealth2))
-- Line 9, mixed : fprintf('  Variance of wealth2 (H/T doubling): %.6f\n', var(wealth2))
-- Line 10, mixed : fprintf('  Variance ratio (baseline/H-T auction gamble): %.1fx\n', var(wealth)/var(wealth2))
-- Line 11, unix : %double initial position--maximize uncertainty by H/T you get it or not
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/computation/histwcv.m**
-
-- Line 31, unix : vinterval = linspace(minV, maxV, nbins)-delta/2.0;
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/postestimation/postestimation_clean.m**
-
-- Line 142, windows : fprintf('  Position adjustment ratio: %.4f\n', adjpos)
-- Line 190, unix : %since the correlation bounds are positive the var(Pv-n/bP^c) is monotone
-- Line 201, windows : fprintf('%-30s %12s %12s %18s\n', '', 'Mean', 'Variance', 'Cov. Auction Price')
-- Line 202, windows : fprintf('%-30s %12.2f %12.0f %18.0f\n', 'Auction Price', mean(aucpricefs), var(aucpricefs), var(aucpricefs))
-- Line 205, windows : fprintf('%-30s %12.2f %12.0f %18.0f\n', 'Initial Market Price', mean(IMM), var(IMM), T4_covIMMPc)
-- Line 211, windows : fprintf(fid, ' & Mean & Variance & Cov. Auction Price \\\\\n\\hline\n');
-- Line 219, unix : disp('Table 4 saved to output/tables/table4.tex')
-- Line 221, windows : fprintf('  Price bias E[P^c] - E[P^v_LB] = %.2f cents\n', mean(aucpricefs) - mean(p_lowimm))
-- Line 239, windows : fprintf('  SD of risk (lower bound): %.2f cents\n', sqrt(min(lbv)))
-- Line 291, windows : fprintf('  Auction bias charge (basis points): %.1f bps\n', basis_points)
-- Line 393, windows : fprintf('  Shading percentiles (LB): P10=%.3f P25=%.3f P50=%.3f P75=%.3f P90=%.3f\n', shad_pctiles(:,1))
-- Line 394, windows : fprintf('  Shading percentiles (UB): P10=%.3f P25=%.3f P50=%.3f P75=%.3f P90=%.3f\n', shad_pctiles(:,2))
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/datacleaning/data_summary.m**
-
-- Line 58, windows : fprintf('%-30s %10s %10s %18s\n', '', 'Mean', 'Sd', '[P10, P90]')
-- Line 63, windows : fprintf('N = %d auctions\n', size(OS1_vars,1));
-- Line 68, windows : fprintf(fid, ' & Mean & Sd & $[P_{10}, P_{90}]$ \\\\\n\\hline\n');
-- Line 77, unix : disp('Table OS.1 saved to output/tables/tableOS1.tex')
-- Line 102, windows : fprintf('  Total credit events: %d\n', size(auctionpriceT(1:end-7,:),1))
-- Line 103, windows : fprintf('  LCDS auctions: %d\n', n_lcds)
-- Line 104, windows : fprintf('  CDS auctions: %d\n', n_cds)
-- Line 122, mixed : fprintf('%-50s %12s %12s\n', 'Dealer', 'Bid/Offer', 'Size ($M)')
-- Line 131, windows : fprintf('%-50s %12s %12.3f\n', pd_bidders{ii}, direction, abs(pd_noi_vals(ii)));
-- Line 133, windows : fprintf('%-50s %12s %12.3f\n', 'Net Open Interest', 'Offer', sum(pd_noi_vals));
-- Line 138, mixed : fprintf(fid, 'Dealer & Bid/Offer & Size (\\$M) \\\\\n\\hline\n');
-- Line 148, unix : disp('Table 1 saved to output/tables/table1.tex')
-- Line 157, windows : fprintf('%-50s %8s %8s\n', 'Dealer', 'Bid', 'Offer')
-- Line 159, windows : fprintf('%-50s %8.2f %8.2f\n', pd_bidders{ii}, pd_bids(ii), pd_offers(ii));
-- Line 164, windows : for ii=1:size(sorted_bids,1); fprintf('  %d: %.2f\n', ib(ii), sorted_bids(ii)); end
-- Line 165, windows : fprintf('Sorted Offers (asc):\n')
-- Line 166, windows : for ii=1:size(sorted_offers,1); fprintf('  %d: %.2f\n', io(ii), sorted_offers(ii)); end
-- Line 167, windows : fprintf('IMM = %.2f\n', IMM(aucidfslist==pd_aucid));
-- Line 172, windows : fprintf(fid, 'Dealer & Bid & Offer \\\\\n\\hline\n');
-- Line 179, unix : disp('Table 2 saved to output/tables/table2.tex')
-- Line 202, windows : fprintf('%-20s %14s %14s %14s\n', '', 'After 30 Days', 'After 5 Days', 'After 1 Day')
-- Line 207, windows : fprintf('N = %d\n', size(BPmeanS,1));
-- Line 212, windows : fprintf(fid, ' & Price after 30 Days & Price after 5 Days & Price after 1 Day \\\\\n\\hline\n');
-- Line 221, unix : disp('Table OS.3 saved to output/tables/tableOS3.tex')
-- Line 326, unix : disp('Table OS.2 saved to output/tables/tableOS2.tex')
-- Line 345, unix : elseif strcmp(eventtype(aucid==aucidfslist(aa)),'Repudiation/moratorium')
-- Line 359, unix : %purchase/sold RAW (ie summed with customers)
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/slurm/job3b_postcfs.m**
-
-- Line 35, windows : fprintf('Started: %s\n\n', datestr(now));
-- Line 49, windows : fprintf('--- Counterfactuals: runs 3-4 ---\n');
-- Line 54, windows : fprintf('  CF run imqi=%d — %s\n', imqi, datestr(now));
-- Line 70, windows : fprintf('  CF run imqi=%d done: %.1f hrs\n', imqi, toc(t_cf)/3600);
-- Line 74, windows : fprintf('--- postmain_cfs ---\n');
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/computation/heatscatter.m**
-
-- Line 20, unix : %            plot_colorbar      [double], boolean 0/1, default 1
-- Line 23, unix : %            plot_lsf           [double], boolean 0/1, default 1
-- Line 26, unix : %                                the correlation/p-value of the data
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/slurm/job3a_postcfs.m**
-
-- Line 35, windows : fprintf('Started: %s\n\n', datestr(now));
-- Line 38, windows : fprintf('--- Loading smc_cfs_np.mat ---\n');
-- Line 51, windows : fprintf('--- postestimation_clean ---\n');
-- Line 54, windows : fprintf('  postestimation_clean: %.1f min\n\n', toc(t_pe)/60);
-- Line 61, windows : fprintf('--- Counterfactuals: runs 1-2 ---\n');
-- Line 66, windows : fprintf('  CF run imqi=%d — %s\n', imqi, datestr(now));
-- Line 82, windows : fprintf('  CF run imqi=%d done: %.1f hrs\n', imqi, toc(t_cf)/3600);
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/computation/table2latex.m**
-
-- Line 25, unix : %   Date:    09/10/2018                                                   %
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/estimation/basic_estimator_copydrop.m**
-
-- Line 566, unix : %Finally, add the restrictions for not cornering the mkt at floor/ceiling being optimal AND
-- Line 599, unix : %compute the minimum/maximum
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/slurm/job2b_estimation.sh**
-
-- Line 1, unix : #!/bin/bash
-- Line 11, unix : #SBATCH --output=../../output/logs/job2b_%j.out
-- Line 12, unix : #SBATCH --error=../../output/logs/job2b_%j.err
-- Line 17, unix : # Output: intermediate/smc_cfs_np.mat
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/computation/jacobianest.m**
-
-- Line 67, unix : % Release date: 3/6/2007
-- Line 170, unix : srinv = 1/StepRatio;
-- Line 195, windows : rinv = rromb\eye(nexpon+1);
-
-**/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-2/replication-package/CDS/code/datacleaning/acrossrounds.m**
-
-- Line 110, unix : %their noi/auction noi their imm/auction imm/ auction price/max bid,
 

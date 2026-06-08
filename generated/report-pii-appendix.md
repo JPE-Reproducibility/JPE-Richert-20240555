@@ -1,6 +1,6 @@
 ## Appendix: Detailed PII Detection Results
 
-*Generated on 2026-04-23 12:20:27*
+*Generated on 2026-06-08 09:20:47*
 
 This appendix lists all detected instances of potential personally identifiable information (PII) in the project files. Each entry shows the matched PII terms and, for data files, sample values to help verify whether the flagged content is indeed sensitive.
 
@@ -482,13 +482,6 @@ This appendix lists all detected instances of potential personally identifiable 
 - Line 99: second
   ```
   error('permn:negativeN','Second argument should be a positive integer') ;
-  ```
-
-**/replication-package/CDS/code/computation/pmcalculation.m**
-
-- Line 1: lat
-  ```
-  function [pM, Efine]=pmcalculation(x,noi_i,noi_sim,immh_sim,imml_sim,Nbidders,nsim)
   ```
 
 **/replication-package/CDS/code/computation/table2latex.m**
@@ -1130,56 +1123,65 @@ This appendix lists all detected instances of potential personally identifiable 
   ```
   % Save Table 1 as LaTeX
   ```
-- Line 168: lat
+- Line 157: name
   ```
-  % Save Table 2 as LaTeX
+  % Rows are placed in the paper's order (IDs 1-9) with proper dealer names. As in
   ```
-- Line 201: name
+- Line 164: name
+  ```
+  t2_name = {'Barclays Bank PLC';'BNP Paribas SA';'Credit Suisse';'Deutsche Bank'; ...
+  ```
+- Line 185: name
+  ```
+  fprintf('  %-3s %-44s %6s %6s   %5s %6s   %5s %6s\n', 'ID','Name','Bid','Offer','SrtID','Bid','SrtID
+  ```
+- Line 187: name
+  ```
+  fprintf('  %-3d %-44s %6g %6g   %5d %6g   %5d %6g\n', ii, t2_name{ii}, ...
+  ```
+- Line 192: lat
+  ```
+  % Save Table 2 as LaTeX (Submissions | Sorted Bids | Sorted Offers)
+  ```
+- Line 198: name
+  ```
+  fprintf(fid, 'ID & Name & Bid & Offer & ID & Bid & ID & Offer \\\\\n\\hline\n');
+  ```
+- Line 200: name
+  ```
+  fprintf(fid, '%d & %s & %g & %g & %d & %g & %d & %g \\\\\n', ii, t2_name{ii}, ...
+  ```
+- Line 228: name
   ```
   OS3_varnames = {'Auction price','IMM price','Constant'};
   ```
-- Line 204: name
+- Line 231: name
   ```
   fprintf('%-20s %8.2f (%4.2f) %8.2f (%4.2f) %8.2f (%4.2f)\n', OS3_varnames{ii}, ...
   ```
-- Line 208: lat
+- Line 235: lat
   ```
   % Save Table OS.3 as LaTeX
   ```
-- Line 214: name
+- Line 241: name
   ```
   fprintf(fid, '%s & %.2f & %.2f & %.2f \\\\\n', OS3_varnames{ii}, be30(ii), be5(ii), be1(ii));
   ```
-- Line 291: second
+- Line 318: second
   ```
   %second column # positive first stage NOI
   ```
-- Line 309: name
+- Line 336: name
   ```
   T.Properties.VariableNames = {'Bidder','Participated','y_i>0','y_i<0','1 step','2 steps','3 steps','
   ```
-- Line 313: lat
+- Line 340: lat
   ```
   % Save Table OS.2 as LaTeX
   ```
-- Line 358: lat
+- Line 385: lat
   ```
   %walk through the auctions and bidders---for each one calculate
-  ```
-
-**/replication-package/CDS/code/datacleaning/debug_bondforestimation.m**
-
-- Line 5: name
-  ```
-  data_path = fullfile(fileparts(fileparts(mfilename('fullpath'))),'..','confidential-data-not-for-pub
-  ```
-- Line 8: name
-  ```
-  bt = readtable(fullfile(data_path,'bondtypes.csv'),'ReadVariableNames',true);
-  ```
-- Line 9: name
-  ```
-  ref = readtable(fullfile(data_path,'bondforestimation.csv'),'ReadVariableNames',true);
   ```
 
 **/replication-package/CDS/code/datacleaning/firststagebidding.m**
@@ -2321,7 +2323,7 @@ This appendix lists all detected instances of potential personally identifiable 
   ```
   code_dir = fileparts(mfilename('fullpath'));
   ```
-- Line 96: lat
+- Line 97: lat
   ```
   % Risk calculations, bias, inefficiency, auction performance (Table 4)
   ```
@@ -2371,39 +2373,47 @@ This appendix lists all detected instances of potential personally identifiable 
   ```
   % Save Table 4 as LaTeX
   ```
-- Line 241: lat
+- Line 240: second, son
+  ```
+  % Secondary-market within-day price SD at +5 days (paper comparison), for Section 6.3
+  ```
+- Line 242: second
+  ```
+  fprintf('  Secondary-market within-day price SD at +5 days: %.2f cents\n', mean(BPsd(BPsd(:,36)~=0,3
+  ```
+- Line 245: lat
   ```
   %Optimal hedging position (utility calculation)
   ```
-- Line 312: lon
+- Line 316: lon
   ```
   ew=ew.*normpdf((NOIgrid(jj)-NOIlong')./bwNOI)'; ew=ew./sum(ew);
   ```
-- Line 319: lat, son
+- Line 323: lat, son
   ```
   %crazy extrapolation over that region. --For the same reason we need to be
   ```
-- Line 326: lat
+- Line 330: lat
   ```
   xlabel('$y^\mathcal{N}$','FontSize',14,'interpreter','latex')
   ```
-- Line 340: lat
+- Line 344: lat
   ```
   % Probability of buying back given (1) it is possible, (2) own price quote relative to imm price (3)
   ```
-- Line 343: lon
+- Line 347: lon
   ```
   buyback_possible=(sign(NOIlong)==sign(noi));
   ```
-- Line 346: lon
+- Line 350: lon
   ```
   Xmat=[imm-((immhigh+immlow)./2) abs(NOIlong-noi)];
   ```
-- Line 351: lat
+- Line 355: lat
   ```
   % Exercise 1: something summarizing correlations in v, n?--contour plot the joint distribution--lowe
   ```
-- Line 381: url
+- Line 385: url
   ```
   saveas(gcf,fullfile(fig_path,'contourlow.png'))
   ```
@@ -2483,163 +2493,5 @@ This appendix lists all detected instances of potential personally identifiable 
 - Line 56: lat
   ```
   fprintf('  Mean cost of manipulation: %.0f\n', costManipule)
-  ```
-
-**/replication-package/CDS/code/slurm/job0_validate.m**
-
-- Line 5: name
-  ```
-  fprintf('Host: %s\n', getenv('HOSTNAME'));
-  ```
-- Line 90: name
-  ```
-  toolbox_names = {v.Name};
-  ```
-- Line 93: name
-  ```
-  if any(strcmp(toolbox_names, needed{i}))
-  ```
-- Line 102: loc
-  ```
-  p = parpool('local', 2);
-  ```
-- Line 113: name
-  ```
-  t = readtable(fullfile(data_path, 'auctionlistid.csv'), 'ReadVariableNames', true);
-  ```
-
-**/replication-package/CDS/code/slurm/job0_validate.sh**
-
-- Line 2: name
-  ```
-  #SBATCH --job-name=cds_validate
-  ```
-
-**/replication-package/CDS/code/slurm/job1_dataprep.m**
-
-- Line 89: name
-  ```
-  fprintf('  %s (line %d)\n', e.stack(k).name, e.stack(k).line);
-  ```
-
-**/replication-package/CDS/code/slurm/job1_dataprep.sh**
-
-- Line 2: name
-  ```
-  #SBATCH --job-name=cds_dataprep
-  ```
-
-**/replication-package/CDS/code/slurm/job2a_estimation.m**
-
-- Line 30: loc
-  ```
-  pc = parcluster('local');
-  ```
-- Line 31: loc, location
-  ```
-  pc.JobStorageLocation = getenv('TMPDIR');
-  ```
-- Line 88: name
-  ```
-  fprintf('  %s (line %d)\n', e.stack(k).name, e.stack(k).line);
-  ```
-
-**/replication-package/CDS/code/slurm/job2a_estimation.sh**
-
-- Line 2: name
-  ```
-  #SBATCH --job-name=cds_est2a
-  ```
-
-**/replication-package/CDS/code/slurm/job2b_estimation.m**
-
-- Line 29: loc
-  ```
-  pc = parcluster('local');
-  ```
-- Line 30: loc, location
-  ```
-  pc.JobStorageLocation = getenv('TMPDIR');
-  ```
-- Line 156: name
-  ```
-  fprintf('  %s (line %d)\n', e.stack(k).name, e.stack(k).line);
-  ```
-
-**/replication-package/CDS/code/slurm/job2b_estimation.sh**
-
-- Line 2: name
-  ```
-  #SBATCH --job-name=cds_est2b
-  ```
-
-**/replication-package/CDS/code/slurm/job3a_postcfs.m**
-
-- Line 24: loc
-  ```
-  pc = parcluster('local');
-  ```
-- Line 25: loc, location
-  ```
-  pc.JobStorageLocation = getenv('TMPDIR');
-  ```
-- Line 57: lat
-  ```
-  %% Save updated workspace (needed by robustnesschecks later)
-  ```
-- Line 92: name
-  ```
-  fprintf('  %s (line %d)\n', e.stack(k).name, e.stack(k).line);
-  ```
-
-**/replication-package/CDS/code/slurm/job3a_postcfs.sh**
-
-- Line 2: name
-  ```
-  #SBATCH --job-name=cds_post3a
-  ```
-
-**/replication-package/CDS/code/slurm/job3b_postcfs.m**
-
-- Line 24: loc
-  ```
-  pc = parcluster('local');
-  ```
-- Line 25: loc, location
-  ```
-  pc.JobStorageLocation = getenv('TMPDIR');
-  ```
-- Line 97: name
-  ```
-  fprintf('  %s (line %d)\n', e.stack(k).name, e.stack(k).line);
-  ```
-
-**/replication-package/CDS/code/slurm/job3b_postcfs.sh**
-
-- Line 2: name
-  ```
-  #SBATCH --job-name=cds_post3b
-  ```
-
-**/replication-package/CDS/code/slurm/job3c_postcfs.m**
-
-- Line 24: loc
-  ```
-  pc = parcluster('local');
-  ```
-- Line 25: loc, location
-  ```
-  pc.JobStorageLocation = getenv('TMPDIR');
-  ```
-- Line 133: name
-  ```
-  fprintf('  %s (line %d)\n', e.stack(k).name, e.stack(k).line);
-  ```
-
-**/replication-package/CDS/code/slurm/job3c_postcfs.sh**
-
-- Line 2: name
-  ```
-  #SBATCH --job-name=cds_post3c
   ```
 

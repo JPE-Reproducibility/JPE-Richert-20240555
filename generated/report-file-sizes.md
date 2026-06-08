@@ -4,7 +4,7 @@
 
 The package contains:
 
-* 87 files
+* 71 files
 
 * 0 Duplicate files
 * 1 Files larger than 100MB
@@ -20,25 +20,16 @@ The package contains:
 | /CDS/code/computation/emcdf.m | 0.0 | 1fa8d4966c7f27f5042930565567bc24c74fe897 |
 | /CDS/code/datacleaning/tiesstats.m | 0.0 | e1ffb911be6f52ceb9b055f98383f55296872e3c |
 | /CDS/code/computation/logmvnpdf.m | 0.0 | 2884220fdb1863fe9622b931f78a9b38fed82a13 |
-| /CDS/code/slurm/job0_validate.sh | 0.0 | 673762b973bb01605dbbc3bd409e51cd3767ecaa |
 | /CDS/code/cfs/getIMM.m | 0.0 | ffa82e30a25b85ccf01efef1fa6c49a69041b317 |
-| /CDS/code/slurm/job3c_postcfs.sh | 0.0 | 062d81887c7248a5cf4927e54db10a5a33670428 |
-| /CDS/code/slurm/job3a_postcfs.sh | 0.0 | 1db08e43ba9db5c399ffe50340aca0af31f47929 |
-| /CDS/code/slurm/job3b_postcfs.sh | 0.0 | 63801815e58cae793ac2326d389db36ee920ee0b |
 | /CDS/code/cfs/generatesimsforcf.m | 0.0 | 581ecea1b72147d128d71e01725f402b63237a37 |
-| /CDS/code/slurm/job2b_estimation.sh | 0.0 | 18a2e9b70366247e9c114e78ec5a31aea7ae9a3b |
 | /CDS/code/computation/evalkspdf.m | 0.0 | 72129e776c52ab7a71f91911045f38b8934f31c4 |
-| /CDS/code/slurm/job1_dataprep.sh | 0.0 | c0eb6e48706346f8d565a500289e6959e44bffdd |
-| /CDS/code/slurm/job2a_estimation.sh | 0.0 | 707077f434b8764552173108159612829099fe71 |
 | /CDS/code/computation/evalkspdf_denom.m | 0.0 | 79a2b8d19716bc785be65881ce489af0b9b23b48 |
 | /CDS/code/computation/evalkspdf_num.m | 0.0 | 0c94f7b6c6dd151f7cee07736423308dd7724550 |
-| /CDS/code/computation/pmcalculation.m | 0.0 | e65096650734d0d02bd0910f5de7851f18a23f55 |
 | /CDS/code/estimation/complex_bootstrap_pe_outputs.m | 0.0 | 12badc67033c4628f6e07d534e0fa53bfbd0b896 |
 | /CDS/code/cfs/getExpectedRIMM.m | 0.0 | 88b15f7d6bcbaab25a7e77c3130eb0e29dcc1d03 |
 | /CDS/code/computation/histwc.m | 0.0 | 55c52235ca4ba586fcc10b7cc642ff5afd3ee8d7 |
 | /CDS/code/postestimation/pricechange_realized.m | 0.0 | eb6619b009f2abc588a18569c7c546f1cf701b97 |
 | /CDS/code/computation/histwcv.m | 0.0 | 5bfd05b181f70048a5a4200d4749f9f4000358c9 |
-| /CDS/code/postestimation/riskaversion.m | 0.0 | 9da6a023cdfa445cb19a7d26cc4e02c8db16230e |
 | /CDS/code/computation/runobjconstr.m | 0.0 | b1f9a22c82b4b2931919ee016da0a7e56bf9243d |
 | /CDS/code/datacleaning/outcomelinks.m | 0.0 | df8c2806a8f901d417cdf95098d424a5214b3e77 |
 | /CDS/code/postestimation/truthfulpimmcheck.m | 0.0 | 6058868f26835dd8bb241deae0b650330b2f30de |
@@ -46,21 +37,17 @@ The package contains:
 | /CDS/code/postestimation/pricechangeNOI_DIR.m | 0.0 | 28b8e3f7fdc68809101d3a6c2c20402a5312f5c9 |
 | /CDS/code/datacleaning/fixfromimm.m | 0.0 | 54e2554caec82fa9480d1cb1774aed3f17093006 |
 | /CDS/code/computation/BsplineEval3.m | 0.0 | 72daba83ebec937bbba01e2319e647bb7d2f4633 |
+| /CDS/code/postestimation/riskaversion.m | 0.0 | 655e77955dbebfd64223ac7797796710b6476106 |
 | /CDS/code/computation/weightedMedian.m | 0.0 | 0a759cb6cb8340bf92286965fbb4352035b0ad0c |
 | /CDS/code/datacleaning/build_bondforestimation.m | 0.0 | 739d6fc44b6e8c42d0ace346a49089905df0cfe2 |
 | /CDS/code/datacleaning/bondprices.m | 0.0 | c67442b53811564f0f11b8de56e37b6114a5d8e4 |
 | /CDS/code/computation/cdf_estimator.m | 0.0 | 2f3a8b2631b2c9d131e20379f236ebdc1532a930 |
-| /CDS/code/slurm/job1_dataprep.m | 0.0 | 68da2539ad6eec3dd1a8258ffebd2e9cf7d7933f |
 | /CDS/code/computation/pairwise_jointd_estimator.m | 0.0 | 762b06dabb6059337d222ea6cb35e5bd048d8a97 |
-| /CDS/code/datacleaning/debug_bondforestimation.m | 0.0 | bda5b0cbc6433100105a31d5153b4ad1d207170d |
 | /CDS/code/postestimation/calculate_surplusraw.m | 0.0 | 47207cb58e47d8b800ae6f6f6eb16a2657388a1e |
-| /CDS/code/slurm/job2a_estimation.m | 0.0 | e8aebeb9e10e482bfed92229768e834daf6839e9 |
 | /CDS/code/computation/pairwise_jointd_estimator_imm.m | 0.0 | 42f4334f797fb8b1f786877d282d9bf5712b864f |
 | /CDS/code/estimation/pricechangebs.m | 0.0 | 8f86db1bf481064c98bc766d672569422d23f757 |
 | /CDS/code/computation/cdf_estimator_imm.m | 0.0 | 58eaa53d16d67d9bb538495ddc38238b1bb5e8ce |
-| /CDS/code/slurm/job3a_postcfs.m | 0.0 | a8ce7df6f775ac398a0272659fe86bc55edc0b9c |
-| /CDS/code/datacleaning/firststagebidding.m | 0.0 | 93bdb2799de3ea00fe58ad368077c899dee4946b |
-| /CDS/code/slurm/job3b_postcfs.m | 0.0 | 9079f389f298724811603cec36d6b088333e959f |
+| /CDS/code/datacleaning/firststagebidding.m | 0.0 | d921fd612bade00ce773ecd201d8611cdfea447d |
 | /CDS/code/datacleaning/cleanbondprice.m | 0.0 | c1814bd606c7961a7d3014682bf4beaedbaed2ad |
 | /CDS/code/computation/table2latex.m | 0.0 | f5bbd70229c74abdae797590d324201258267365 |
 | /CDS/code/datacleaning/bondpriceimport.m | 0.0 | bf61f72352170b06b13fb2385ee289cdb2d078b4 |
@@ -68,14 +55,11 @@ The package contains:
 | /CDS/code/cfs/weightsolnpricespartialgridINTs1_yin.m | 0.0 | e297a16902c74b5de285a747079356285cc2d4aa |
 | /CDS/code/datacleaning/customerorder_frequency.m | 0.0 | 73dc3a6d5ec13eb25cc056b6d7ea04b15a644b20 |
 | /CDS/code/datacleaning/acrossrounds.m | 0.0 | 61ad507cd0197e719cda7bdb659e08aa79c746e5 |
-| /CDS/code/slurm/job3c_postcfs.m | 0.01 | 924096731442b3af8a434d29fe4581cee4fb183b |
-| /CDS/code/slurm/job0_validate.m | 0.01 | 5b9b8cabf9215c45349d006132b4d70f85ca75e0 |
-| /CDS/code/slurm/job2b_estimation.m | 0.01 | 00842ce7497566087a3631521c9f075a066f2fa8 |
 | /CDS/code/computation/jacobianest.m | 0.01 | d22f9a612843b150f432880e53ba641a0434ca5e |
 | /CDS/code/computation/permn.m | 0.01 | 595ea12677f605c386a1662eb883d5701d465d76 |
 | /CDS/code/computation/dscatter.m | 0.01 | c38872c350c63de3f3e3758ed48b35c6e3f75974 |
-| /CDS/code/main_cds.m | 0.01 | 1e5d89460aecdb325beec8ca6a2ad3ac6bef6492 |
 | /CDS/code/postestimation/round1_quotescalibration.m | 0.01 | 92250d3578291d0dcbd55164c381edf61e3ba8d9 |
+| /CDS/code/main_cds.m | 0.01 | e09b0bf38c4388cecf9aa15a36492313918a3ac8 |
 | /CDS/code/computation/heatscatter.m | 0.01 | 24a57fb7fec58f47c443fb61734a2ddc297cad7c |
 | /CDS/code/estimation/npestimator.m | 0.01 | e32e100003f6aa48366dedfc6e91b5865433d709 |
 | /CDS/code/cfs/postmain_cfs.m | 0.01 | 0a84217f869dc8c2d72f5d9d11b02d1cc38efb0e |
@@ -85,13 +69,13 @@ The package contains:
 | /CDS/code/estimation/complex_estimator_step2b.m | 0.01 | b8a18e1b558fffa71335dc7e4fd7681f0144dcd4 |
 | /CDS/code/estimation/complex_bootstrap.m | 0.01 | d17441bac42174e0490136919cdb24516e32c9ab |
 | /CDS/code/estimation/complex_estimator_step2.m | 0.01 | d9ed4e5a88a459b54568ca3c883754ff2f1622e9 |
-| /CDS/code/datacleaning/data_summary.m | 0.02 | 317ab815e27a85356974365648b8e9793e4e972f |
 | /CDS/code/computation/BsplineBasis3.m | 0.02 | 80e4fe62f57b8a6a4701f426e7b75271c90e0793 |
 | /CDS/confidential-data-not-for-publication/auctionlistid.csv | 0.02 | 86cb49e9c7fcb9972e4b9d0eb83ed292205b5eeb |
-| /CDS/code/postestimation/postestimation_clean.m | 0.02 | d29a435291588f66bc0616a6a825e163bba2e4e7 |
+| /CDS/code/postestimation/postestimation_clean.m | 0.02 | 6765f4a1ab4da5777fd30089db2968f71b05630c |
+| /CDS/code/datacleaning/data_summary.m | 0.02 | c33c373a821dc8464ea8a2db4f8353b5942a09f5 |
 | /CDS/code/datacleaning/normalize_prices.m | 0.02 | f6392e0115bdfa7972fa9ec0766f0cf0450a4786 |
 | /CDS/code/computation/weightedcorrs.m | 0.03 | a2485acafe972a7c9e11fc102069a48342e63ab9 |
-| /CDS/README.md | 0.03 | 80e9d04478573a4fad5cde67b5e72e5c23cfb6bb |
+| /CDS/README.md | 0.03 | 61c8a16523b3a2b892993673b738ad70e91f494a |
 | /CDS/confidential-data-not-for-publication/openinterest_clean.csv | 0.04 | 1d22e5c1f1e4cdd4d87b1adff123fe61e16e54d5 |
 | /CDS/code/estimation/complex_estimator_step1.m | 0.04 | 59ff83e997e8264f21fdc66472cc9db3a087dbe8 |
 | /CDS/code/estimation/basic_estimator.m | 0.04 | 59b145dd2d524ead67ec499af118795dd63c56bf |

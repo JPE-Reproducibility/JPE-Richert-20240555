@@ -94,7 +94,7 @@ This data is accessible to academic researchers, but cannot be reposted publicly
 
 ## Software Requirements
 
-- **MATLAB** The code must be run in R2023a
+- **MATLAB** The code was run in R2023a
 - **Required Toolboxes:**
   - Statistics and Machine Learning Toolbox
   - Optimization Toolbox
@@ -106,7 +106,7 @@ This data is accessible to academic researchers, but cannot be reposted publicly
 
 - The bootstrap estimation uses parallel computing (`ncores = 20` by default in `main_cds.m`). Adjust this setting to match available cores.
 - Estimated runtime: approximately 20 hours on a 20-core cluster node, or 3--4 days on a desktop. The bootstrap estimation (~10 hrs), counterfactual simulations (~7 CF runs, ~45 min each), and value calculation (~3.5 hrs) are the most time-consuming stages.
-- Large intermediate `.mat` files are generated (up to ~700 MB for `smc_cfs_np.mat`).
+- Large intermediate `.mat` files are generated. Requires 56GB storage.
 
 ---
 
@@ -121,7 +121,7 @@ CDS/
 |   +-- estimation/                        Bootstrap estimation routines (10 files)
 |   +-- postestimation/                    Post-estimation analysis (8 files)
 |   +-- cfs/                               Counterfactual simulations (8 files)
-|   +-- computation/                       Utility/helper functions (25 files)
+|   +-- computation/                       Utility/helper functions (24 files)
 +-- confidential-data-not-for-publication/ Raw input data (CSV files)
 +-- output/                                All generated outputs
     +-- figures/                           Figures (.png)
@@ -167,7 +167,7 @@ Loads the auction-level CSV data (dealer quotes, net open interest, limit orders
 - `firststagebidding.m` -- Constructs auction-level variables: the Initial Market Midpoint (IMM) from dealer bid/offer quotes, aggregate net open interest (NOI), price cap/floor from ISDA rules, and the final auction clearing price. Links bidders across auction stages (`acrossrounds.m`) to extract each dealer's stage-2 limit order schedule and carried-over IMM bid. Produces Figure OS.7 (auction price vs IMM scatter).
 - `outcomelinks.m` -- Merges auction outcomes with post-auction bond price changes for price discovery analysis.
 
-Produces Tables 1, 2 (Parker Drilling example), OS.1 (eligible bonds), OS.2 (participation), OS.3 (post-auction prices), and Figures OS.4 (purchases), OS.5 (event-type prices). Saves `maindata.mat`. Note that the tables produced for parker drilling contain the actual data, while results reported in the paper modify bids of bidder 8 and 5 for illustration (as described in the Table notes). The sorted columns of Table 2 are constructed manually from the information in the submissions columns (i.e., sorted bids, orders the bids column from high to low and sorted offers, sorts the offer column from low to high). 
+Produces Tables 1, 2 (Parker Drilling example), OS.1 (eligible bonds), OS.2 (participation), OS.3 (post-auction prices), and Figures OS.4 (purchases), OS.5 (event-type prices). Saves `maindata.mat`.
 
 *Runtime: ~30 seconds.*
 
@@ -327,7 +327,7 @@ Main entry point. Sets paths, creates output directories, adds subdirectories to
 | `getIMM.m` | Function | Simulates IMM formation from correlated dealer quote submissions. Called by `round1_quotescalibration` and `getExpectedRIMM`. |
 | `getExpectedRIMM.m` | Function | Computes E[R|eta,IMM] by Bayesian updating conditional on both private signal and observed IMM. Called by `round1_quotescalibration`. |
 
-### `code/computation/` (25 utility functions)
+### `code/computation/` (24 utility functions)
 
 | File | Description |
 |------|-------------|
@@ -336,7 +336,6 @@ Main entry point. Sets paths, creates output directories, adds subdirectories to
 | `pairwise_jointd_estimator_imm.m` | Estimates bivariate CDF bounds of (position, value) conditional on IMM on a 100×100 grid. For contour plots. |
 | `cdf_estimator.m` | Unconditional version of CDF estimation (superseded by `cdf_estimator_imm`). |
 | `pairwise_jointd_estimator.m` | Unconditional version of joint CDF estimation (superseded by `pairwise_jointd_estimator_imm`). |
-| `pmcalculation.m` | Simulates IMM formation from dealer quotes to compute the distribution of the market midpoint and the expected fine for deviating from truthful reporting. Used by `truthfulpimmcheck`. |
 | `runobjconstr.m` | Wrapper for `fmincon` with nested objective/constraint functions. Used in SMC optimization. |
 | `BsplineEval3.m` | Evaluates cubic B-spline basis functions. Calls `BsplineBasis3`. (Third-party: Hickman/Hubbard/Paarsch) |
 | `BsplineBasis3.m` | Cox-de Boor recursion for cubic B-spline basis. (Third-party: Hickman/Hubbard/Paarsch) |
@@ -382,6 +381,8 @@ Main entry point. Sets paths, creates output directories, adds subdirectories to
 | Table 4 | Statistics to Evaluate Auction Performance | `output/tables/table4.tex` | `postestimation_clean.m` |
 | Table 5 | Change in Auction Format (Counterfactual) | `output/tables/table5.tex` | `postmain_cfs.m` |
 
+*Table 2 note:* `data_summary.m` reconstructs the Parker Drilling quotes in the paper's dealer order (IDs 1--9) and adds the sorted-bid and sorted-offer columns. As described in the paper, the displayed bid and offer of bidder 5 (Goldman Sachs) are raised 1 cent and those of bidder 8 (Morgan Stanley) lowered 1 cent to illustrate a crossing. This is display-only: it affects the printed table and `table2.tex` and does not change the raw quotes used anywhere else. The generated `table2.tex` is the tabular only; the paper's table note is part of the manuscript text.
+
 ### Appendix -- Tables and Figures
 
 | Paper | Description | Output | Source Script |
@@ -394,6 +395,7 @@ Main entry point. Sets paths, creates output directories, adds subdirectories to
 | Table OS.5 | Bond Traits: Auction Level | `output/tables/tableOS5.tex` | `normalize_prices.m` |
 | Table OS.6 | Change in Auction Format (Bond Supply) | `output/tables/tableOS6.tex` | `main_cds.m` (from `smc_cfs_yin` runs) |
 | Figure OS.3 | Secondary Market Prices | `output/figures/abnormaleventgraph.png` | `bondprices.m` |
+| Figure OS.3 | Secondary Market Prices | `output/figures/abnormaleventgraph_mean.png` | `bondprices.m` |
 | Figure OS.4 | Purchases | `output/figures/totalQ.png`, `purchasedQ.png` | `data_summary.m` |
 | Figure OS.5 | Event Types: Prices | `output/figures/priceevent.png` | `data_summary.m` |
 | Figure OS.6 | Sample Bounds from Monotonicity | `output/figures/graphn61.png`, `graphn57.png` | `robustnesschecks.m` |
@@ -412,40 +414,15 @@ All in-text numerical claims are produced with labeled `fprintf` statements in t
 | Section 6.1 | Truthful bidding surplus bounds | `postestimation_clean.m` |
 | Section 6.2 | Price bias (cents, %) | `postestimation_clean.m` |
 | Section 6.3 | Risk SD, hedging effectiveness | `postestimation_clean.m` |
+| Section 6.4 | Gain from full insurance | `postestimation_clean.m` |
 | Section 7 | CF surplus, price bias, hedging | `postmain_cfs.m` |
 | Appendix C.2 | Risk aversion comparison | `riskaversion.m` |
 | Appendix C.5.1 | Truthful reporting incentives | `truthfulpimmcheck.m` |
 | Appendix C.5.1 | Quote manipulation calibration | `round1_quotescalibration.m` |
 | Appendix C.6 | Customer orders robustness | `robustnesschecks.m` |
 | Appendix C.7 | Bid shading with positions | `postestimation_clean.m` |
-| Appendix D | CF robustness (volume caps, positions) | `smc_cfs_yin.m` |
-
----
-
-## Running on a Cluster (SLURM)
-
-The `slurm/` directory contains batch scripts that split the pipeline into jobs that fit within a 12-hour wall time limit. Each job chains to the next on success.
-To use these scripts, the user must change account, partition, and qos to match their own cluster.
-
-```
-cd CDS/slurm
-bash submit_all.sh
-```
-
-### Job Structure
-
-| Job | Script | Cores | Wall Time | Runtime | Description |
-|-----|--------|-------|-----------|---------|-------------|
-| 1 | `job1_dataprep` | 1 | 6 hrs | ~1.5 hrs | Bond price import + data cleaning |
-| 2 | `job2_estimation` | 21 | 12 hrs | ~10 hrs | Bootstrap estimation (parfor step1 + v_correction) |
-| 3a | `job3a_postcfs` | 21 | 6 hrs | ~2.5 hrs | Post-estimation + CF runs 1--2 |
-| 3b | `job3b_postcfs` | 21 | 6 hrs | ~1.5 hrs | CF runs 3--4 + postmain_cfs (Table 5) |
-| 3c | `job3c_postcfs` | 21 | 11 hrs | ~7.5 hrs | Robustness CFs (3 runs) + tableOS6 + robustnesschecks |
-
-**Total wall time: ~23 hours** (vs ~3--4 days on a desktop with 20 cores).
-
-Each job saves results to `output/intermediate/` and logs to `output/logs/`. If a job fails, the pipeline stops and does not submit the next job. Check the MATLAB log (`output/logs/jobN_log.txt`) for error details.
-
+| Appendix D.3 | CF robustness: changes in positions (price & SD bounds) | `main_cds.m` (positionschange run) |
+| Appendix D.4 | CF robustness: bond supply constraints (Table OS.6) | `main_cds.m` (sell\_limit runs) |
 
 ---
 

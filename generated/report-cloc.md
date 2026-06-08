@@ -1,11 +1,10 @@
-cloc|github.com/AlDanial/cloc v 2.02  T=0.13 s (666.3 files/s, 202312.1 lines/s)
+cloc|github.com/AlDanial/cloc v 2.02  T=0.16 s (437.3 files/s, 156361.2 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
 CSV|5|0|0|14416
-MATLAB|73|1152|2113|7771
-Markdown|1|152|0|319
-Bourne Shell|7|22|98|69
+MATLAB|64|1048|2041|7077
+Markdown|1|144|0|304
 --------|--------|--------|--------|--------
-SUM:|86|1326|2211|22575
+SUM:|70|1192|2041|21797
