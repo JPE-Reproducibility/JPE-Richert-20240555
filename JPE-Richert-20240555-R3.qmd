@@ -25,6 +25,10 @@ Some useful information up front:
 
 In assessing compliance with our [Data and Code Availability Policy](https://www.journals.uchicago.edu/journals/jpe/datapolicy), our reproducibility team has identified the following issues, which we ask you to address:
 
+1. There are still numerous discrepancies in output. Your proposed fixes do not seem to have worked in all cases. Notice those are not small deviations but significantly different results.
+2. Your computing environment description is still insufficient. Please improve.
+3. The output of your in-text numbers scripts is different from what is printed in the paper. we see 209 vs 202 credit events, for example.
+
 # General
 
 - [x] Data Availability and Provenance Statements
