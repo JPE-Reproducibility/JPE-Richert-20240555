@@ -1,6 +1,6 @@
 ## Appendix: Detailed PII Detection Results
 
-*Generated on 2026-06-08 14:18:48*
+*Generated on 2026-07-07 11:34:57*
 
 This appendix lists all detected instances of potential personally identifiable information (PII) in the project files. Each entry shows the matched PII terms and, for data files, sample values to help verify whether the flagged content is indeed sensitive.
 
@@ -65,123 +65,123 @@ This appendix lists all detected instances of potential personally identifiable 
 
 **/replication-package/CDS/code/cfs/smc_cfs_yin.m**
 
-- Line 7: lat
+- Line 8: lat
   ```
   %get a correlation and a cdf of y+y^c
   ```
-- Line 56: lat
+- Line 57: lat
   ```
   %match vat1 and vat5 correlations
   ```
-- Line 60: lat
+- Line 61: lat
   ```
   %match noi and n correlations
   ```
-- Line 142: block, loc
+- Line 143: block, loc
   ```
   blocks=2;
   ```
-- Line 168: loc
+- Line 169: loc
   ```
   nuIloc=[1:1:B];
   ```
-- Line 170: loc
+- Line 171: loc
   ```
   nuIloc=randsample([1:1:B],B,true,weightB);
   ```
-- Line 171: loc
+- Line 172: loc
   ```
   nuj=thetaB(:,nuIloc);
   ```
-- Line 177: block, loc
+- Line 178: block, loc
   ```
   %ASSIGN TO BLOCKS...L random blocks within block proposal density
   ```
-- Line 180: block, loc
+- Line 181: block, loc
   ```
   if blocks>1
   ```
-- Line 181: block, loc
+- Line 182: block, loc
   ```
   blockA=randi(blocks,Kp,1);
   ```
-- Line 182: block, loc
+- Line 183: block, loc
   ```
   for l=1:blocks
   ```
-- Line 183: block, loc
+- Line 184: block, loc
   ```
   covJ{l}=sigj(j).*cov(thetaB(blockA==l,:)')./max(max(cov(thetaB(blockA==l,:)')));
   ```
-- Line 185: block, loc
+- Line 186: block, loc
   ```
   mvnpdf(thetaB(blockA==l,1),zeros(sum(blockA==l),1),covJ{l});
   ```
-- Line 195: block, loc
+- Line 196: block, loc
   ```
   mbblock=cell(blocks,B,K+1);
   ```
-- Line 198: block, loc
-  ```
-  for bbb=1:blocks
-  ```
 - Line 199: block, loc
   ```
-  if sum(blockA==bbb)>0
+  for bbb=1:blocks
   ```
 - Line 200: block, loc
   ```
+  if sum(blockA==bbb)>0
+  ```
+- Line 201: block, loc
+  ```
   mbblock{bbb,bO,kkO}=mvnrnd(zeros(sum(blockA==bbb),1),covJ{bbb})';
   ```
-- Line 214: loc
+- Line 215: loc
   ```
   lnINold=lnfitOld(1,nuIloc(b));
   ```
-- Line 218: block, loc
+- Line 219: block, loc
   ```
   if blocks==1
   ```
-- Line 223: block, loc
+- Line 224: block, loc
   ```
   gx=zeros(1,blocks);
   ```
-- Line 224: block, loc
+- Line 225: block, loc
   ```
   gxR=zeros(1,blocks);
   ```
-- Line 225: block, loc
-  ```
-  for bb=1:blocks
-  ```
 - Line 226: block, loc
   ```
-  if sum(blockA==bb)>0
+  for bb=1:blocks
   ```
 - Line 227: block, loc
   ```
+  if sum(blockA==bb)>0
+  ```
+- Line 228: block, loc
+  ```
   x(blockA==bb)=xold(blockA==bb)+mbblock{bb,b,kk};
-  ```
-- Line 267: block, loc
-  ```
-  for bbb=1:blocks
   ```
 - Line 268: block, loc
   ```
-  if sum(blockA==bbb)>0
+  for bbb=1:blocks
   ```
 - Line 269: block, loc
   ```
+  if sum(blockA==bbb)>0
+  ```
+- Line 270: block, loc
+  ```
   mbblock2{bbb}=mvnrnd(zeros(sum(blockA==bbb),1),covJ{bbb})';
-  ```
-- Line 278: block, loc
-  ```
-  for bb=1:blocks
   ```
 - Line 279: block, loc
   ```
-  if sum(blockA==bb)>0
+  for bb=1:blocks
   ```
 - Line 280: block, loc
+  ```
+  if sum(blockA==bb)>0
+  ```
+- Line 281: block, loc
   ```
   xa(blockA==bb)=xold(blockA==bb)+mbblock2{bb};
   ```
@@ -195,106 +195,106 @@ This appendix lists all detected instances of potential personally identifiable 
 
 **/replication-package/CDS/code/computation/BsplineBasis3.m**
 
-- Line 35: city
+- Line 34: city
   ```
   %knots of multiplicity>1. If the user wishes to suppress these warning
   ```
-- Line 54: second
+- Line 53: second
   ```
   %   3) Similarly, Ydblprime (TxK+3) contains second derivatives of the
   ```
-- Line 74: son
+- Line 73: son
   ```
   %%%%We use coincident boundary knots for reasons that will become  clear
   ```
-- Line 81: degree
+- Line 80: degree
   ```
   %%%%Begin with the order 1 (degree d=0) B-spline basis, defined by
   ```
-- Line 85: degree
+- Line 84: degree
   ```
   %%%%Then, to compute the order d+1 spline basis (of degree d>0), we use
   ```
-- Line 118: city, second
+- Line 117: city, second
   ```
   warning('BsplineBasis3:C2Fail','existence of knots with multiplicity at least two implies discontinu
   ```
-- Line 123: city
+- Line 122: city
   ```
   warning('BsplineBasis3:C1Fail','existence of knots with multiplicity at least three implies disconti
   ```
-- Line 153: degree
+- Line 152: degree
   ```
   D = 3;  %%%%This is the degree of the spline basis functions to be computed
   ```
-- Line 162: degree
+- Line 161: degree
   ```
   %%%%This first loop computes the first order basis functions (of degree
   ```
-- Line 165: degree
+- Line 164: degree
   ```
   d0=order1-1; %%%%d stands for "degree"
   ```
-- Line 180: degree, second
+- Line 179: degree, second
   ```
   %%%%This second loop computes the second order basis functions (of degree
   ```
-- Line 183: degree
+- Line 182: degree
   ```
   d1 = order2-1; %%%%d stands for "degree"
   ```
-- Line 193: second
+- Line 192: second
   ```
   elseif x(indx+d1+1)-x(indx+1)==0;  %%%%Here we check for zero denominator in the second term
   ```
-- Line 200: degree
+- Line 199: degree
   ```
   %%%%This third loop computes the third order basis functions (of degree
   ```
-- Line 203: degree
+- Line 202: degree
   ```
   d2 = order3-1; %%%%d stands for "degree"
   ```
-- Line 213: second
+- Line 212: second
   ```
   elseif x(indx+d2+1)-x(indx+1)==0;  %%%%Here we check for zero denominator in the second term
   ```
-- Line 220: degree
+- Line 219: degree
   ```
   %%%%This fourth loop computes the fourth order basis functions (of degree
   ```
-- Line 223: degree
+- Line 222: degree
   ```
   d3 = order4-1; %%%%d stands for "degree"
   ```
-- Line 233: second
+- Line 232: second
   ```
   %%%%This loop initiates the second derivatives matrix if called for.
   ```
-- Line 235: second
+- Line 234: second
   ```
   Ydblprime = zeros(size(B3)); %%%%The variable Yprime here will contain the second derivatives of the
   ```
-- Line 246: second
+- Line 245: second
   ```
   %%%%Here we compute the second derivatives, if called for
   ```
-- Line 256: second
+- Line 255: second
   ```
   elseif x(indx+d3+1)-x(indx+1)==0;  %%%%Here we check for zero denominator in the second term
   ```
-- Line 262: second
+- Line 261: second
   ```
   %%%%Here we compute the second derivatives, if called for
   ```
-- Line 278: second
+- Line 277: second
   ```
   %%%%Here we compute the second derivatives, if called for, checking for the relevant zero denominato
   ```
 
 **/replication-package/CDS/code/computation/BsplineEval3.m**
 
-- Line 14: second
+- Line 13: second
   ```
   %contain the first, second, and/or third derivatives of f at the points in
   ```
@@ -317,97 +317,11 @@ This appendix lists all detected instances of potential personally identifiable 
   %calculate averages
   ```
 
-**/replication-package/CDS/code/computation/dscatter.m**
-
-- Line 4: loc, location
-  ```
-  %   DSCATTER(X,Y) creates a scatterplot of X and Y at the locations
-  ```
-- Line 40: lon, name
-  ```
-  %       xlabel(params(1).LongName); ylabel(params(2).LongName);
-  ```
-- Line 63: name
-  ```
-  'Incorrect number of arguments to %s.',mfilename);
-  ```
-- Line 67: name
-  ```
-  pname = varargin{j};
-  ```
-- Line 69: name
-  ```
-  k = strmatch(lower(pname), okargs); %#ok
-  ```
-- Line 71: name
-  ```
-  error('Bioinfo:UnknownParameterName',...
-  ```
-- Line 72: name
-  ```
-  'Unknown parameter name: %s.',pname);
-  ```
-- Line 74: name
-  ```
-  error('Bioinfo:AmbiguousParameterName',...
-  ```
-- Line 75: name
-  ```
-  'Ambiguous parameter name: %s.',pname);
-  ```
-- Line 130: lon
-  ```
-  % Reverse the columns to put the first column of X along the horizontal
-  ```
-- Line 131: lon, second
-  ```
-  % axis, the second along the vertical.
-  ```
-
 **/replication-package/CDS/code/computation/emcdf.m**
 
 - Line 2: lat
   ```
   %Calculate empirical dist...transform and max
-  ```
-
-**/replication-package/CDS/code/computation/heatscatter.m**
-
-- Line 3: name
-  ```
-  %% heatscatter(X, Y, outpath, outname, numbins, markersize, marker, plot_colorbar, plot_lsf, xlab, y
-  ```
-- Line 9: name
-  ```
-  %            outname            name of the output-file. if outname contains
-  ```
-- Line 15: lat
-  ```
-  %                                heat3-calculation, thus the coloring
-  ```
-- Line 26: lat
-  ```
-  %                                the correlation/p-value of the data
-  ```
-- Line 44: name
-  ```
-  if ~exist('outname','var') || isempty(outname)
-  ```
-- Line 45: name
-  ```
-  error('Param outname is mandatory! --> EXIT!');
-  ```
-- Line 177: name
-  ```
-  [p,n,r] = fileparts(outname);
-  ```
-- Line 181: name
-  ```
-  outname = strcat(p,n,r);
-  ```
-- Line 182: name
-  ```
-  outfile = fullfile(outpath, outname);
   ```
 
 **/replication-package/CDS/code/computation/jacobianest.m**
@@ -416,155 +330,95 @@ This appendix lists all detected instances of potential personally identifiable 
   ```
   %  x0  - vector location at which to differentiate fun
   ```
-- Line 91: lat
+- Line 88: lat
   ```
   relativedelta = MaxStep*StepRatio .^(0:-1:-25);
   ```
-- Line 92: lat
+- Line 89: lat
   ```
   nsteps = length(relativedelta);
   ```
-- Line 100: lat
+- Line 97: lat
   ```
   delta = x0_i*relativedelta;
   ```
-- Line 102: lat
+- Line 99: lat
   ```
   delta = relativedelta;
   ```
-- Line 107: second
+- Line 104: second
   ```
   % difference to give a second order estimate
   ```
-- Line 116: second
+- Line 113: second
   ```
   % these are pure second order estimates of the
   ```
-- Line 120: second
+- Line 117: second
   ```
   % The error term on these estimates has a second order
   ```
-- Line 122: lat
+- Line 119: lat
   ```
   % Use Romberg exrapolation to improve the estimates to
   ```
-- Line 157: lat
+- Line 154: lat
   ```
   % subfunction - romberg extrapolation
   ```
-- Line 160: lat
+- Line 157: lat
   ```
   % do romberg extrapolation for each estimate
   ```
-- Line 180: lat
+- Line 177: lat
   ```
   % qr factorization used for the extrapolation as well
   ```
-- Line 187: lat
+- Line 184: lat
   ```
   % this does the extrapolation to a zero step size.
   ```
 
 **/replication-package/CDS/code/computation/permn.m**
 
-- Line 87: son
+- Line 84: son
   ```
   %    out by Wilson).
   ```
-- Line 89: name
+- Line 86: name
   ```
   % 5.0 (may 2015) NAME CHANGED (COMBN -> PERMN) and updated description,
   ```
-- Line 92: lat
+- Line 89: lat
   ```
   % 5.1 (may 2015) always calculate M via indices
   ```
-- Line 99: second
+- Line 96: second
   ```
   error('permn:negativeN','Second argument should be a positive integer') ;
   ```
 
-**/replication-package/CDS/code/computation/table2latex.m**
+**/replication-package/CDS/code/computation/verify_env.m**
 
-- Line 2: lat, name
+- Line 6: block, loc
   ```
-  % Function table2latex(T, filename) converts a given MATLAB(R) table into %
+  %     top of main_cds.m (right after the addpath block).
   ```
-- Line 3: lat
+- Line 13: loc
   ```
-  % a plain .tex file with LaTeX formatting.                                %
+  fp_str = sprintf('%u', local_fingerprint());
   ```
-- Line 9: name
+- Line 16: name
   ```
-  %       - filename: (Optional) Output path, including the name of the file.
+  if ispc, [~,cpu] = system('wmic cpu get name');
   ```
-- Line 14: name, son
+- Line 17: name
   ```
-  %       LastName = {'Sanchez';'Johnson';'Li';'Diaz';'Brown'};             %
+  else,    [~,cpu] = system('grep -m1 "model name" /proc/cpuinfo'); end
   ```
-- Line 20: name
+- Line 53: loc
   ```
-  %       T.Properties.RowNames = LastName;                                 %
-  ```
-- Line 21: lat
-  ```
-  %       table2latex(T);                                                   %
-  ```
-- Line 32: name
-  ```
-  filename = 'table.tex';
-  ```
-- Line 33: name
-  ```
-  fprintf('Output path is not defined. The table will be written in %s.\n', filename);
-  ```
-- Line 34: name
-  ```
-  elseif ~ischar(filename)
-  ```
-- Line 35: name
-  ```
-  error('The output file name must be a string.');
-  ```
-- Line 37: name
-  ```
-  if ~strcmp(filename(end-3:end), '.tex')
-  ```
-- Line 38: name
-  ```
-  filename = [filename '.tex'];
-  ```
-- Line 48: name
-  ```
-  col_names = strjoin(T.Properties.VariableNames, ' & ');
-  ```
-- Line 49: name
-  ```
-  row_names = T.Properties.RowNames;
-  ```
-- Line 50: name
-  ```
-  if ~isempty(row_names)
-  ```
-- Line 52: name
-  ```
-  col_names = ['& ' col_names];
-  ```
-- Line 56: name
-  ```
-  fileID = fopen(filename, 'w');
-  ```
-- Line 58: name
-  ```
-  fprintf(fileID, '%s \\\\ \n', col_names);
-  ```
-- Line 72: name
-  ```
-  if ~isempty(row_names)
-  ```
-- Line 73: name
-  ```
-  temp = [row_names{row}, temp];
+  % ===== local fingerprint: single-threaded; restores threads AND RNG state =====
   ```
 
 **/replication-package/CDS/code/computation/weightedMedian.m**
@@ -1026,31 +880,27 @@ This appendix lists all detected instances of potential personally identifiable 
   ```
   writetable(bonddlocs,fullfile(int_path,'bondpermutations.txt'));
   ```
-- Line 24: name
-  ```
-  %    filename: gosyop23q6grk5y1.csv (in data_path)
-  ```
-- Line 35: name
+- Line 29: name
   ```
   % Specify column names and types
   ```
-- Line 36: name
+- Line 30: name
   ```
   opts.VariableNames = ["cusip_id1", "bond_sym_id1", "company_symbol1", "date", "tradetime", "quantity
   ```
-- Line 66: loc
+- Line 60: loc
   ```
   bonddlocs=table2array(bonddlocs);
   ```
-- Line 68: loc
+- Line 62: loc
   ```
   for jk=1:size(bonddlocs,1) %added ,1
   ```
-- Line 69: loc
+- Line 63: loc
   ```
   if isequal(bonddlocs{jk},bondslist(ii))
   ```
-- Line 84: name
+- Line 78: name
   ```
   auctionlistid=(readtable(fullfile(data_path,'auctionlistid.csv'),'ReadVariableNames',true));
   ```
@@ -1253,91 +1103,91 @@ This appendix lists all detected instances of potential personally identifiable 
   ```
   carriedoverq=carriedoverq./abs(NOIlong');
   ```
-- Line 246: lat
+- Line 245: lat
   ```
   % Save Table 3 as LaTeX
   ```
-- Line 274: second
+- Line 273: second
   ```
   fprintf('  Auctions with no second stage (NOI=0): %d\n', sum(NOI==0))
   ```
-- Line 276: lon
+- Line 275: lon
   ```
   repurchase_rate = sum((sign(maxQi)'~=sign(NOIlong))'.*(sign(NOIlong')==sign(noi)))./sum((sign(NOIlon
   ```
-- Line 283: lon
+- Line 282: lon
   ```
   bwNOI=1.06.*((prctile(NOIlong,75)-prctile(NOIlong,25))./1.34).*(max(size(NOIlong))).^(-1./5);
   ```
-- Line 284: lon
+- Line 283: lon
   ```
   qw_fv=nansum(qw_newbid'.*normpdf((imm-imm')./bwimm).*(normpdf((NOIlong-NOIlong')./bwNOI)),2)./sum((i
   ```
-- Line 293: lon
+- Line 292: lon
   ```
   [b,ci,~,~,stats1]=regress(immhigh,[Bonddur' Bondcf' Bondconv' (Bondvol./1e6)' NOIlong' global_bidder
   ```
-- Line 298: name
+- Line 297: name
   ```
   OS4_varnames = {'Duration','Conversion','Convexity','Volume','Global Dealer'};
   ```
-- Line 299: name
+- Line 298: name
   ```
   for ii=1:5; fprintf('  %-20s %8.3f (%6.3f)\n', OS4_varnames{ii}, OS4_col1(ii,1), OS4_col1(ii,2)); en
   ```
-- Line 309: name
+- Line 308: name
   ```
   for ii=1:5; fprintf('  %-20s %8.3f (%6.3f)\n', OS4_varnames{ii}, OS4_col2(ii,1), OS4_col2(ii,2)); en
   ```
-- Line 310: lat
+- Line 309: lat
   ```
   % Save Table OS.4 as LaTeX
   ```
-- Line 316: name
+- Line 315: name
   ```
   fprintf(fid, '%s & %.2f & %.2f \\\\\n', OS4_varnames{ii}, OS4_col1(ii,1), OS4_col2(ii,1));
   ```
-- Line 349: name
+- Line 348: name
   ```
   OS5_varnames = {'Duration','Conversion','Convexity','Volume','NOI','IMM','IMM^2','Constant'};
   ```
-- Line 351: name
+- Line 350: name
   ```
   for ii=1:8; fprintf('  %-15s %10.4f (%8.4f)\n', OS5_varnames{ii}, b1(ii), se1(ii)); end
   ```
-- Line 352: name
+- Line 351: name
   ```
   OS5b_varnames = {'Duration','Conversion','Convexity','Volume','NOI','Constant'};
   ```
-- Line 354: name
+- Line 353: name
   ```
   for ii=1:6; fprintf('  %-15s %10.4f (%8.4f)\n', OS5b_varnames{ii}, b2(ii), se2(ii)); end
   ```
-- Line 355: lat
+- Line 354: lat
   ```
   % Save Table OS.5 as LaTeX
   ```
-- Line 361: name
+- Line 360: name
   ```
   fprintf(fid, '%s & %.3f & %.2f \\\\\n', OS5_varnames{ii}, b1(ii), b2(ii));
   ```
-- Line 390: lon
+- Line 389: lon
   ```
   X=[br_Nsteps' br_auc_noi' br_noi' ones(size(NOIlong'))];
   ```
-- Line 393: name
+- Line 392: name
   ```
   A1_P1_varnames = {'IMM var.','N steps','Auction NOI','Own NOI','Constant'};
   ```
-- Line 394: name
+- Line 393: name
   ```
   for ii=1:5; fprintf('  %-15s %8.3f (%6.3f)\n', A1_P1_varnames{ii}, b(ii), se(ii)); end
   ```
-- Line 400: lon
+- Line 399: lon
   ```
   X=[(br_imm-br_auc_imm)' br_Nsteps' br_auc_noi' br_noi' ones(size(NOIlong')) br_maxbidq'];
   ```
-- Line 419: lat
+- Line 418: lat
   ```
   % Save Table A.1 as LaTeX
   ```
@@ -2323,7 +2173,7 @@ This appendix lists all detected instances of potential personally identifiable 
   ```
   code_dir = fileparts(mfilename('fullpath'));
   ```
-- Line 97: lat
+- Line 100: lat
   ```
   % Risk calculations, bias, inefficiency, auction performance (Table 4)
   ```

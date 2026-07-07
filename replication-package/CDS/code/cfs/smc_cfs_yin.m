@@ -1,4 +1,5 @@
-rng(2000);
+if ~exist('cf_seed','var') || isempty(cf_seed), cf_seed=0; end
+rng(2000+cf_seed);
 %FIRST SET UP THE TARGET DISTRIBUTIONS TO MATCH%%%%%%%%%%%%%%%%%%
 if positionschange==1
 nout(:,1:2)=0.98.*nout(:,1:2);
@@ -65,7 +66,7 @@ vatnoi(:,2)=noi;
 
 rsa=1;
 r=1;
-rng(123,'twister');
+rng(123+cf_seed,'twister');
 K=3;
 
 ngrid=1000;ndraw=1000;
@@ -79,7 +80,7 @@ npq=1000*Kbar;
 nsim=1000;
 nrep=1000;
 N=I;
-rng(200);
+rng(200+cf_seed);
 generatesimsforcf;
 Xgrid=linspace(0,1,1000);
 knotvec=linspace(0,1,2);
@@ -176,7 +177,7 @@ sigj(j)=sigj(j-1).*(0.95+0.1*exp(16*(AA(j-1)-0.35))./(1+exp(16*(AA(j-1)-0.35))))
 
 %ASSIGN TO BLOCKS...L random blocks within block proposal density
 %sigj*lagged covariance of draws from iteration j-1 within block l.
-rng(j*200)
+rng(j*200+cf_seed)
 if blocks>1
 blockA=randi(blocks,Kp,1);
 for l=1:blocks
@@ -263,7 +264,7 @@ for jaj=1:size(thetaB,2)
     lnfitOld(jaj)=-0.5.*bidfit(normalizeT(thetaB(:,jaj)));
 end
 while exitflag==0
-rng(counter);
+rng(counter+cf_seed);
     for bbb=1:blocks
                if sum(blockA==bbb)>0
                mbblock2{bbb}=mvnrnd(zeros(sum(blockA==bbb),1),covJ{bbb})';
@@ -300,23 +301,27 @@ fprintf('  Posterior draws: %d (counter=%d)\n', size(sim_theta,2), counter);
 
 if positionschange~=1
 fnmind=fullfile(int_path,sprintf(['cf_topout_np_pt_',num2str(round(sell_limit)),num2str(2*sfrac),num2str(imqi)]));
-save(fnmind,'-v7.3');
+%save(fnmind,'-v7.3');
+save(fnmind, '-regexp', '^(?!(extraoutbs|extrainfobs|supplyp2bs|supplyq2bs)$).');
 
 clear Gfit Pcl qx surp sdpcl C_binds
 for jj=1:size(sim_theta,2)
 [Gfit(jj),~,~,Pcl(jj),~,~,~,qx{jj},~,surp{jj},sdpcl(jj),C_binds(jj),surpA(jj,:),surpAB(jj,:),PclA{jj},vclA{jj},vcuA{jj}]=Outerfitfun(normalizeT(sim_theta(:,jj)));
 end
-save(fnmind,'-v7.3');
+%save(fnmind,'-v7.3');
+save(fnmind, '-regexp', '^(?!(extraoutbs|extrainfobs|supplyp2bs|supplyq2bs)$).');
 
 else
 fnmind=fullfile(int_path,'positionschange',sprintf(['cf_topout_np_pt_',num2str(round(sell_limit)),num2str(2*sfrac),num2str(imqi)]));
-save(fnmind,'-v7.3');
+%save(fnmind,'-v7.3');
+save(fnmind, '-regexp', '^(?!(extraoutbs|extrainfobs|supplyp2bs|supplyq2bs)$).');
 
 clear Gfit Pcl qx surp sdpcl C_binds
 for jj=1:size(sim_theta,2)
 [Gfit(jj),~,~,Pcl(jj),~,~,~,qx{jj},~,surp{jj},sdpcl(jj),C_binds(jj),surpA(jj,:),surpAB(jj,:),PclA{jj},vclA{jj},vcuA{jj}]=Outerfitfun(normalizeT(sim_theta(:,jj)));
 end
-save(fnmind,'-v7.3');
+%save(fnmind,'-v7.3');
+save(fnmind, '-regexp', '^(?!(extraoutbs|extrainfobs|supplyp2bs|supplyq2bs)$).');
 end
 
 

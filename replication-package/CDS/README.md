@@ -94,7 +94,7 @@ This data is accessible to academic researchers, but cannot be reposted publicly
 
 ## Software Requirements
 
-- **MATLAB** The code was run in R2023a
+- **MATLAB** The code was run in R2023a Update 5, with BLAS Intel(R) oneAPI Math Kernel Library Version 2021.3-Product Build 20210611 for Intel(R) 64 architecture applications (CNR branch AVX512_E1)
 - **Required Toolboxes:**
   - Statistics and Machine Learning Toolbox
   - Optimization Toolbox
@@ -104,8 +104,8 @@ This data is accessible to academic researchers, but cannot be reposted publicly
 
 ## Hardware Requirements
 
-- The bootstrap estimation uses parallel computing (`ncores = 20` by default in `main_cds.m`). Adjust this setting to match available cores.
-- Estimated runtime: approximately 20 hours on a 20-core cluster node, or 3--4 days on a desktop. The bootstrap estimation (~10 hrs), counterfactual simulations (~7 CF runs, ~45 min each), and value calculation (~3.5 hrs) are the most time-consuming stages.
+- The bootstrap estimation uses parallel computing (`ncores = 20` by default in `main_cds.m`). Adjust this setting to match available cores. CPU must support AVX-512.
+- Estimated runtime: approximately 20 hours on a 20-core cluster node, or 3--4 days on a desktop (intel Xeon(R) Gold 6242R CPU @3.10GHz, 20 Cores, 128GB RAM). The bootstrap estimation (~10 hrs), counterfactual simulations (~7 CF runs, ~45 min each), and value calculation (~3.5 hrs) are the most time-consuming stages.
 - Large intermediate `.mat` files are generated. Requires 56GB storage.
 
 ---
@@ -135,14 +135,15 @@ CDS/
 
 ## Instructions
 
-1. Open MATLAB and set the working directory to `CDS/`.
-2. Open `code/main_cds.m` and review the settings section:
+1. Set MKL_CBWR=AVX512 and check that matlab version uses AVX512 (run: version('-blas'))
+2. Open MATLAB and set the working directory to `CDS/`.
+3. Open `code/main_cds.m` and review the settings section:
    - `ncores`: Number of parallel workers (default: 20)
    - `nbs`: Number of bootstrap replications (default: 200)
    - `updatedata`: Set to 1 to rebuild data from CSVs, 0 to load cached
    - `bond_price_analysis`: Set to 0 to skip bond price import (not required for main results)
-3. Run `main_cds.m`.
-4. All outputs are saved to the `output/` directory.
+4. Run `main_cds.m`.
+5. All outputs are saved to the `output/` directory.
 
 ---
 
@@ -273,6 +274,7 @@ Main entry point. Sets paths, creates output directories, adds subdirectories to
 
 | File | Type | Description |
 |------|------|-------------|
+| `verify_env.m` | Script | Checks compute environment setup correctly. |
 | `bondpriceimport.m` | Script | Imports FINRA TRACE bond transactions. Generates CUSIP permutations, matches to auction bonds, computes daily price summaries in 61-day windows. Saves `bondprices.mat`. |
 | `data_summary.m` | Script | Loads all CSV data, merges and cleans. Calls `bondprices`, `firststagebidding`, `outcomelinks`. Produces Tables 1, 2, OS.1, OS.2, OS.3, Figures OS.4, OS.5. Saves `maindata.mat`. |
 | `normalize_prices.m` | Script | Normalizes prices to 0--100 scale, constructs bidder IDs, normalizes quantities by NOI, builds supply function matrices. Calls `customerorder_frequency`. Produces Table 3, A.1, OS.4, OS.5, Figures 1A/1B. Saves `for211.mat`. |
@@ -352,9 +354,6 @@ Main entry point. Sets paths, creates output directories, adds subdirectories to
 | `logmvnpdf.m` | Log multivariate normal PDF (numerically stable). |
 | `jacobianest.m` | Numerical Jacobian via adaptive finite differences with Richardson extrapolation. |
 | `permn.m` | Permutations with repetition. (Third-party: Jos van der Geest) |
-| `table2latex.m` | Converts MATLAB table to LaTeX tabular environment. |
-| `dscatter.m` | Density-colored scatter plot. |
-| `heatscatter.m` | Heat-colored scatter plot with optional fit line. |
 
 ---
 

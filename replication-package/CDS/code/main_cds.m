@@ -43,8 +43,11 @@ addpath(fullfile(code_dir, 'cfs'))
 updatedata   = 1;
 bootstrap    = 1;
 runbootstrap  = 1;
-ncores       = 16;
+ncores       = 20;
 nbs          = 200;
+%% ================= Verify Env ============================================
+verify_env()
+
 
 %% ================= DIARY LOG ===========================================
 % Single log for the whole run (data prep -> estimation -> CFs -> robustness)
@@ -130,8 +133,14 @@ OS6_500 = [min(Pcl) max(Pcl) min(sdpcl) max(sdpcl) min(surpAB)*median(ndeal)/100
 sell_limit=100;
 sfrac=2;
 positionschange=0;
+PclU=[]; sdU=[]; sAU=[]; sABU=[];
+for ch=2:-1:1
+    cf_seed=(ch-1)*1000;
 smc_cfs_yin
-OS6_100 = [min(Pcl) max(Pcl) min(sdpcl) max(sdpcl) min(surpAB)*median(ndeal)/100 max(surpA)*median(ndeal)/100];
+PclU=[PclU Pcl(:).']; sdU=[sdU sdpcl(:).']; sABU=[sABU surpAB(:)];
+end
+clear cf_seed
+OS6_100 = [min(PclU) max(PclU) min(sdU) max(sdU) min(sABU)*median(ndeal)/100 max(surpA)*median(ndeal)/100];
 
 %% Table OS.6: Change in Auction Format (Bond Supply)
 disp('========== TABLE OS.6: Change in Auction Format (Bond Supply) ==========')
@@ -152,11 +161,16 @@ disp('Table OS.6 saved to output/tables/tableOS6.tex')
 sell_limit=median(Bondvol);
 sfrac=1;
 positionschange=1;
+nout_orig=nout;
+PclU=[]; sdU=[]; ch=1;
+cf_seed=(ch-1)*1000;
+nout=nout_orig;
 smc_cfs_yin
-
+PclU=[PclU Pcl(:).']; sdU=[sdU sdpcl(:).'];
+clear cf_seed
 %% Appendix D.3: double-auction price and SD bounds under changed positions
-D3_price = [min(Pcl) max(Pcl)];
-D3_sd    = [min(sdpcl) max(sdpcl)];
+D3_price = [min(PclU) max(PclU)];
+D3_sd    = [min(sdU) max(sdU)];
 disp('========== APPENDIX D.3: Counterfactual with Changes in Positions ==========')
 fprintf('  Expected price: [%.2f, %.2f]\n', D3_price)
 fprintf('  Std dev:        [%.2f, %.2f]\n', D3_sd)

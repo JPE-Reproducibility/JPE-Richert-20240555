@@ -97,9 +97,9 @@ end
 %% ============ SECTION 2: Sample Composition ============
 disp('========== SECTION 2: Sample Composition ==========')
 auction_types = table2array(auctionpriceT(:,3));
-n_lcds = sum(strcmp(auction_types,'LCDS'));
-n_cds = sum(strcmp(auction_types,'CDS'));
-fprintf('  Total credit events: %d\n', size(auctionpriceT,1))
+n_lcds = sum(strcmp(auction_types,'LCDS'))+sum(strcmp(auction_types,'ELCDS'));
+n_cds = sum(strcmp(auction_types(1:end-7,:),'CDS'));
+fprintf('  Total credit events: %d\n', (n_cds+n_lcds))
 fprintf('  LCDS auctions: %d\n', n_lcds)
 fprintf('  CDS auctions: %d\n', n_cds)
 
@@ -155,15 +155,15 @@ pd_offers = table2array(immtab(table2array(immtab(:,end))==pd_aucid, 3));
 
 % --- Display-only reconstruction of paper Table 2 ---
 % Rows are placed in the paper's order (IDs 1-9) with proper dealer names. As in
-% the paper note, the displayed bid AND offer of bidder 5 (Goldman Sachs) are
-% raised 1 cent and those of bidder 8 (Morgan Stanley) lowered 1 cent, purely to
+% the paper note, the displayed bid AND offer of bidder 5 are
+% raised 1 cent and those of bidder 8  lowered 1 cent, purely to
 % illustrate a crossing. The t2_* copies below feed ONLY this table's printout
 % and tex file; pd_bids/pd_offers and all downstream code keep the raw values.
 t2_csv  = {'barclays';'bnpparibas';'suisse';'deutschebank';'goldmansachs'; ...
            'jpmorgan';'merrilllynch';'morganstanley';'societegenerale'};
 t2_name = {'Barclays Bank PLC';'BNP Paribas SA';'Credit Suisse';'Deutsche Bank'; ...
            'Goldman Sachs International';'J.P. Morgan Securities LLC'; ...
-           'Merrill Lynch, Pierce, Fenner & Smith Inc.';'Morgan Stanley & Co. LLC'; ...
+           'Merrill Lynch';'Morgan Stanley'; ...
            'Societe Generale'};
 t2_bid = zeros(9,1); t2_off = zeros(9,1);
 for ii=1:9
@@ -171,8 +171,8 @@ for ii=1:9
     t2_bid(ii) = pd_bids(jj);
     t2_off(ii) = pd_offers(jj);
 end
-t2_bid(5) = t2_bid(5) + 1;  t2_off(5) = t2_off(5) + 1;   % bidder 5 (Goldman): +1 cent (display only)
-t2_bid(8) = t2_bid(8) - 1;  t2_off(8) = t2_off(8) - 1;   % bidder 8 (Morgan Stanley): -1 cent (display only)
+t2_bid(5) = t2_bid(5) + 1;  t2_off(5) = t2_off(5) + 1;   % bidder 5: +1 cent (display only)
+t2_bid(8) = t2_bid(8) - 1;  t2_off(8) = t2_off(8) - 1;   % bidder 8: -1 cent (display only)
 % Sorted bid/offer columns in the paper's exact order, including its tie order
 % (bids descending, offers ascending). The ID sequences are fixed to match
 % Table 2 in the paper; values are pulled from the display-adjusted quotes above

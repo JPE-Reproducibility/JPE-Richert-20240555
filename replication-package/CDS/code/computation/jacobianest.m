@@ -60,9 +60,6 @@ function [jac,err] = jacobianest(fun,x0)
 %
 % See also: derivest, gradient, gradest
 %
-%
-% Author: John D'Errico
-% e-mail: woodchips@rochester.rr.com
 % Release: 1.0
 % Release date: 3/6/2007
 

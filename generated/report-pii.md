@@ -5,8 +5,8 @@
 **Summary:**
 - Data files with PII indicators: 5
 - Variables flagged in data: 6
-- Code files with PII references: 38
-- PII references in code: 585
+- Code files with PII references: 36
+- PII references in code: 549
 
 ### Summary of Flagged Files
 
@@ -22,7 +22,7 @@
 | Code | `acrossrounds.m` | 1 | second |
 | Code | `basic_estimator.m` | 56 | lon, lat, city |
 | Code | `basic_estimator_copydrop.m` | 56 | lon, lat, city |
-| Code | `bondpriceimport.m` | 14 | name, loc |
+| Code | `bondpriceimport.m` | 13 | name, loc |
 | Code | `bondprices.m` | 1 | lat |
 | Code | `build_bondforestimation.m` | 2 | name |
 | Code | `calculate_surplusraw.m` | 5 | lon, son |
@@ -34,10 +34,8 @@
 | Code | `complex_estimator_step2b.m` | 11 | lon, lat |
 | Code | `data_summary.m` | 27 | name, block, loc, lat, second |
 | Code | `doubleauctionOuter_1stepspecial_yin.m` | 3 | lat |
-| Code | `dscatter.m` | 11 | loc, location, lon, name, second |
 | Code | `emcdf.m` | 1 | lat |
 | Code | `firststagebidding.m` | 10 | loc, lat |
-| Code | `heatscatter.m` | 9 | name, lat |
 | Code | `jacobianest.m` | 13 | loc, location, lat, second |
 | Code | `main_cds.m` | 3 | lat, loc, location, name |
 | Code | `normalize_prices.m` | 28 | lon, lat, second, name |
@@ -49,9 +47,9 @@
 | Code | `robustnesschecks.m` | 6 | lat, lon |
 | Code | `round1_quotescalibration.m` | 8 | lat, lon |
 | Code | `smc_cfs_yin.m` | 30 | lat, block, loc |
-| Code | `table2latex.m` | 20 | lat, name, son |
 | Code | `truthfulpimmcheck.m` | 3 | lat |
 | Code | `v_correction.m` | 3 | lon |
+| Code | `verify_env.m` | 5 | block, loc, name |
 | Code | `weightedMedian.m` | 4 | lat |
 | Code | `weightedcorrs.m` | 100 | lat, son, second, loc, location |
 | Code | `weightsolnpricespartialgridINTs1_yin.m` | 1 | lon |

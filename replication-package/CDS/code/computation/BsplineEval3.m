@@ -1,6 +1,5 @@
 function [f,fprime,fdblprime,ftrplprime] = BsplineEval3(knotvec,params,dom)
 % © Brent R. Hickman, Timothy P. Hubbard, and Harry J. Paarsch
-% hickmanbr@uchicago.edu, timothy.hubbard@colby.edu, hjpaarsch@gmail.com
 %
 % please cite our Quantitative Economics paper "Identification and
 % Estimation of a Bidding Model for Electronic Auctions" if this code is

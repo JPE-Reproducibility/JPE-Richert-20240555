@@ -55,8 +55,8 @@ for k=1:size(aucidfslist,1)
 end
 
 %generate unique ids for bidder/auction and throw these on the initial
-%round quantities AND the big vector of p/q (1849x1 idfs) (6445x1 idss)
-%idco for carryovers...(1331x1)
+%round quantities AND the big vector of p/q
+%idco for carryovers.
 
 idn=1;
  clear tempfs tempss tempco tempfsnoi
@@ -131,10 +131,9 @@ for k=1:size(idfs,1)
    supplyp2(k,:)=[supplyp(idss==idfs(k))' zeros(1,118-size(supplyp(idss==idfs(k)),1))];
    supplyq2(k,:)=[supplyq(idss==idfs(k))' zeros(1,118-size(supplyp(idss==idfs(k)),1))];
 end
-%figure; dscatter(FSglobalID',sum(supplyp2>0,2))
 
 
-%estimate the first stage of this garbage.
+%estimate the first stage of this.
 
 for kl=1:size(aucidfslist,1)
     st=supplyp(aucidsupply==aucidfslist(kl));
@@ -158,7 +157,7 @@ saveas(gcf,fullfile(fig_path,'immnoiscatter.png'))
 
 
 
-%LAWSUIT COLLUSION REGRESSIONS SCREENS
+%LAWSUIT REGRESSIONS SCREENS
 
 for aa=1:size(supplyp,1)
 s2_noi(aa)=NOI(aucidfslist==aucidsupply(aa));

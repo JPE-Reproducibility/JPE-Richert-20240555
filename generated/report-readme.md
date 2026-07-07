@@ -3,7 +3,7 @@
 👉 We are considering the file at 
 
 ```
-/Users/florianoswald/actions-runner/_work/JPE-Richert-20240555/JPE-Richert-20240555/replication-package/CDS/README.md 
+/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20240555-4/replication-package/CDS/README.md 
 ```
 to be the relevant `README`.
 

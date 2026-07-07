@@ -63,9 +63,6 @@ function [M, I] = permn(V, N, K)
 %            ALLCOMB, PERMPOS, NEXTPERM, NCHOOSE2 on the File Exchange
 % tested in Matlab 2018a
 % version 6.2 (jan 2019)
-% (c) Jos van der Geest
-% Matlab File Exchange Author ID: 10584
-% email: samelinoa@gmail.com
 % History
 % 1.1 updated help text
 % 2.0 new faster algorithm
