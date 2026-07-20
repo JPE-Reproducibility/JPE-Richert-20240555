@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-07-20">
+
+<title>JPE Replication Report</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="JPE-Richert-20240555-R4_files/libs/clipboard/clipboard.min.js"></script>
+<script src="JPE-Richert-20240555-R4_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="JPE-Richert-20240555-R4_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="JPE-Richert-20240555-R4_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="JPE-Richert-20240555-R4_files/libs/quarto-html/popper.min.js"></script>
+<script src="JPE-Richert-20240555-R4_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="JPE-Richert-20240555-R4_files/libs/quarto-html/anchor.min.js"></script>
+<link href="JPE-Richert-20240555-R4_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="JPE-Richert-20240555-R4_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="JPE-Richert-20240555-R4_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="JPE-Richert-20240555-R4_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="JPE-Richert-20240555-R4_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">JPE Replication Report</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 20, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="paper-identification" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Paper Identification</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>ID</td>
+<td>JPE-Richert-20240555</td>
+</tr>
+<tr class="even">
+<td>Author</td>
+<td>Richert, Eric</td>
+</tr>
+<tr class="odd">
+<td>Title</td>
+<td>Quantity Commitments in Multiunit Auctions: Evidence from Credit Event Auctions</td>
+</tr>
+<tr class="even">
+<td>Iteration</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>Some useful information up front:</p>
+<ul>
+<li><a href="https://www.journals.uchicago.edu/journals/jpe/datapolicy">JPE Data and Code Availability Policy</a></li>
+<li><a href="https://jpedataeditor.github.io/">Step by step guidance from Data Editor for Authors</a></li>
+<li><a href="https://social-science-data-editors.github.io/template_README/">Template README</a></li>
+</ul>
+</section>
+<section id="summary" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Summary</h1>
+<p>In assessing compliance with our <a href="https://www.journals.uchicago.edu/journals/jpe/datapolicy">Data and Code Availability Policy</a>, our reproducibility team has identified the following issues, which we ask you to address:</p>
+</section>
+<section id="general" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> General</h1>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="">Data Availability and Provenance Statements</label>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="">Statement about Rights - Part 1: Right to use the data (e.g.&nbsp;<em>did the authors lawfully obtain the data</em>)</label></li>
+<li><label><input type="checkbox">Statement about Rights - Part 2: Right to publish the data (e.g.&nbsp;<em>are human subjects involved and did permission been granted to publish their data?</em>)</label></li>
+<li><label><input type="checkbox">License for Data (optional, but recommended)</label></li>
+<li><label><input type="checkbox" checked="">Details on each Data Source</label></li>
+</ul></li>
+<li><label><input type="checkbox" checked="">Dataset list</label></li>
+<li><label><input type="checkbox" checked="">Computational requirements</label>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="">Software Requirements</label></li>
+<li><label><input type="checkbox" checked="">Controlled Randomness (as necessary)</label></li>
+<li><label><input type="checkbox" checked="">Memory, Runtime, and Storage Requirements</label></li>
+</ul></li>
+<li><label><input type="checkbox" checked="">Description of programs/code</label>
+<ul class="task-list">
+<li><label><input type="checkbox">License for Code (Optional, but recommended)</label></li>
+</ul></li>
+<li><label><input type="checkbox" checked="">{REPLICATOR} to Replicators</label>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="">Details (as necessary)</label></li>
+</ul></li>
+<li><label><input type="checkbox" checked="">List of tables and programs</label></li>
+<li><label><input type="checkbox" checked="">References (Optional, but recommended)</label></li>
+</ul>
+</section>
+<section id="high-level-description-of-research-project" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> High-level Description of Research Project</h1>
+<ul class="task-list">
+<li><label><input type="checkbox">uses observational data.</label></li>
+<li><label><input type="checkbox" checked="">uses <em>confidential</em> observational data.</label></li>
+<li><label><input type="checkbox">uses data generated via experiment or trial by the authors (in field or lab).</label>
+<ul class="task-list">
+<li><label><input type="checkbox">For lab experiments: The code to implement the experimental protocol (z-Tree, o-Tree etc) is included in the package.</label></li>
+<li><label><input type="checkbox">A PDF copy of IRB approval is contained in the package.</label></li>
+<li><label><input type="checkbox">A PDF document outlining the design of the experiment, including information on the selection and eligibility of participants is included.</label></li>
+<li><label><input type="checkbox">A PDF copy of the instructions given to participants in both original language and an English translation is included.</label></li>
+</ul></li>
+<li><label><input type="checkbox">uses data generated via survey by the authors (in field or online)</label>
+<ul class="task-list">
+<li><label><input type="checkbox">The programs used to administer the survey (e.g.&nbsp;qualtrics survey file) are included.</label></li>
+<li><label><input type="checkbox">A PDF copy of IRB approval is contained in the package.</label></li>
+<li><label><input type="checkbox">A PDF of the original questionaire(s) and information on the selection and eligibility of participants is included.</label></li>
+</ul></li>
+<li><label><input type="checkbox">is a simulation study: the data are generated by an algorithm.</label></li>
+<li><label><input type="checkbox">is a numerical illustration: no data are used but code is used to produce illustrative output (tables, figures)</label></li>
+</ul>
+</section>
+<section id="data-description" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Data description</h1>
+<blockquote class="blockquote">
+<p>{REPLICATOR} If the project has any confidential or restricted data, please leave the following statements here. If not, delete until next heading (<code>## Data Sources</code>).</p>
+</blockquote>
+<p>For any data that cannot be provided as part of the replication package, please provide the following information as part of the README.</p>
+<blockquote class="blockquote">
+<p>{REQUIRED} Please specify how long the data will be preserved in the restricted-access location.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>{REQUIRED} Please provide affirmation of support for replication checks. - As per the <a href="https://jpedataeditor.github.io/policy.html">JPE policy</a>, “In cases where data cannot be published in an openly accessible trusted data repository like the JPE dataverse, authors who have requested an exemption to publish them at the time of first submission must commit to preserving the data and code for a period of no less than five years following the publication of the paper. They should also provide reasonable assistance to requests for clarification and replication.”</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>{REQUIRED} Please provide a codebook for the data. - The codebook should at a minimum describe the variables obtained from the data source, in a manner that will let others verify that they have obtained a substantially similar dataset if successfully obtaining access to the data.</p>
+</blockquote>
+<section id="data-sources" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="data-sources"><span class="header-section-number">5.1</span> Data Sources</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>file/name</th>
+<th>public</th>
+<th>private</th>
+<th>DOI/URL</th>
+<th>Access described</th>
+<th>cited readme</th>
+<th>cited paper</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>immspreads_clean.csv</td>
+<td>no</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>openinterest_clean.csv</td>
+<td>no</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>limitorders_clean.csv</td>
+<td>no</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>auctionlistid.csv</td>
+<td>no</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>bondtypes.csv</td>
+<td>no</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>gosyop23q6grk5y1.csv</td>
+<td>no</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="requirements" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Requirements</h1>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="">README is in TXT, MD, or PDF format</label></li>
+<li><label><input type="checkbox" checked="">README is accessible at the root of the package (not inside a folder)</label></li>
+<li><label><input type="checkbox" checked="">Title conforms to guidance (starts with “Data and Code for: Title of Paper” or “Code for: Title of Paper”, is properly capitalized)</label></li>
+<li><label><input type="checkbox" checked="">Authors (with affiliations) are listed in the same order as on the paper</label></li>
+</ul>
+<section id="stated-requirements" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="stated-requirements"><span class="header-section-number">6.1</span> Stated Requirements</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">No requirements specified</label></li>
+<li><label><input type="checkbox">Software Requirements specified as follows:</label>
+<ul>
+<li>MATLAB R2023a</li>
+<li>Toolboxes: Statistics and Machine Learning Toolbox, Optimization Toolbox, Parallel Computing Toolbox</li>
+</ul></li>
+<li><label><input type="checkbox">Computational Requirements specified as follows:</label>
+<ul>
+<li>Hardware: 20-core cluster node or 3–4 days desktop</li>
+<li>Storage: Sufficient space for large intermediate .mat files</li>
+<li>Requires 56GB storage.</li>
+</ul></li>
+<li><label><input type="checkbox">Time Requirements specified as follows:</label>
+<ul>
+<li>approximately 20 hours on a 20-core cluster node, or 3–4 days on a desktop</li>
+</ul></li>
+<li><label><input type="checkbox" checked="">Requirements are complete.</label></li>
+</ul>
+<p>For missing requirements, see the list of required changes in <a href="#sec-findings" class="quarto-xref">Section&nbsp;9</a></p>
+</section>
+</section>
+<section id="analyzing-data-and-code-files" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Analyzing Data and Code Files</h1>
+<section id="potential-personal-identifiable-information-pii" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="potential-personal-identifiable-information-pii"><span class="header-section-number">7.1</span> Potential Personal Identifiable Information (PII)</h2>
+<p>⚠️ We found the following instances of potentially personally identifying information. This may be completely legitimate but might be worth checking. <em>As a reminder, privacy legislation in many countries (e.g.&nbsp;GDPR in EU) prohibits the dissemination of personal identifiable information without prior (and documented) consent of individuals.</em> If indeed you want to publish such information with your replication package, you should probably have obtained IRB approval for this - please check!</p>
+<p><strong>Summary:</strong> - Data files with PII indicators: 5 - Variables flagged in data: 6 - Code files with PII references: 36 - PII references in code: 549</p>
+<section id="summary-of-flagged-files" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="summary-of-flagged-files"><span class="header-section-number">7.1.1</span> Summary of Flagged Files</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>File Type</th>
+<th>File</th>
+<th>Variables/References</th>
+<th>PII Categories</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Data</td>
+<td><code>auctionlistid.csv</code></td>
+<td>1</td>
+<td>name</td>
+</tr>
+<tr class="even">
+<td>Data</td>
+<td><code>bondtypes.csv</code></td>
+<td>2</td>
+<td>name, loc</td>
+</tr>
+<tr class="odd">
+<td>Data</td>
+<td><code>immspreads_clean.csv</code></td>
+<td>1</td>
+<td>name</td>
+</tr>
+<tr class="even">
+<td>Data</td>
+<td><code>limitorders_clean.csv</code></td>
+<td>1</td>
+<td>name</td>
+</tr>
+<tr class="odd">
+<td>Data</td>
+<td><code>openinterest_clean.csv</code></td>
+<td>1</td>
+<td>name</td>
+</tr>
+<tr class="even">
+<td>Code</td>
+<td><code>BsplineBasis3.m</code></td>
+<td>24</td>
+<td>city, second, son, degree</td>
+</tr>
+<tr class="odd">
+<td>Code</td>
+<td><code>BsplineEval3.m</code></td>
+<td>1</td>
+<td>second</td>
+</tr>
+<tr class="even">
+<td>Code</td>
+<td><code>acrossrounds.m</code></td>
+<td>1</td>
+<td>second</td>
+</tr>
+<tr class="odd">
+<td>Code</td>
+<td><code>basic_estimator.m</code></td>
+<td>56</td>
+<td>lon, lat, city</td>
+</tr>
+<tr class="even">
+<td>Code</td>
+<td><code>basic_estimator_copydrop.m</code></td>
+<td>56</td>
+<td>lon, lat, city</td>
+</tr>
+<tr class="odd">
+<td>Code</td>
+<td><code>bondpriceimport.m</code></td>
+<td>13</td>
+<td>name, loc</td>
+</tr>
+<tr class="even">
+<td>Code</td>
+<td><code>bondprices.m</code></td>
+<td>1</td>
+<td>lat</td>
+</tr>
+<tr class="odd">
+<td>Code</td>
+<td><code>build_bondforestimation.m</code></td>
+<td>2</td>
+<td>name</td>
+</tr>
+<tr class="even">
+<td>Code</td>
+<td><code>calculate_surplusraw.m</code></td>
+<td>5</td>
+<td>lon, son</td>
+</tr>
+<tr class="odd">
+<td>Code</td>
+<td><code>cdf_estimator.m</code></td>
+<td>1</td>
+<td>lat</td>
+</tr>
+<tr class="even">
+<td>Code</td>
+<td><code>cdf_estimator_imm.m</code></td>
+<td>2</td>
+<td>lat</td>
+</tr>
+<tr class="odd">
+<td>Code</td>
+<td><code>complex_bootstrap.m</code></td>
+<td>6</td>
+<td>second, lon, lat</td>
+</tr>
+<tr class="even">
+<td>Code</td>
+<td><code>complex_estimator_step1.m</code></td>
+<td>71</td>
+<td>lon, lat, city</td>
+</tr>
+<tr class="odd">
+<td>Code</td>
+<td><code>complex_estimator_step2.m</code></td>
+<td>12</td>
+<td>lon, lat</td>
+</tr>
+<tr class="even">
+<td>Code</td>
+<td><code>complex_estimator_step2b.m</code></td>
+<td>11</td>
+<td>lon, lat</td>
+</tr>
+<tr class="odd">
+<td>Code</td>
+<td><code>data_summary.m</code></td>
+<td>27</td>
+<td>name, block, loc, lat, second</td>
+</tr>
+<tr class="even">
+<td>Code</td>
+<td><code>doubleauctionOuter_1stepspecial_yin.m</code></td>
+<td>3</td>
+<td>lat</td>
+</tr>
+<tr class="odd">
+<td>Code</td>
+<td><code>emcdf.m</code></td>
+<td>1</td>
+<td>lat</td>
+</tr>
+<tr class="even">
+<td>Code</td>
+<td><code>firststagebidding.m</code></td>
+<td>10</td>
+<td>loc, lat</td>
+</tr>
+<tr class="odd">
+<td>Code</td>
+<td><code>jacobianest.m</code></td>
+<td>13</td>
+<td>loc, location, lat, second</td>
+</tr>
+<tr class="even">
+<td>Code</td>
+<td><code>main_cds.m</code></td>
+<td>3</td>
+<td>lat, loc, location, name</td>
+</tr>
+<tr class="odd">
+<td>Code</td>
+<td><code>normalize_prices.m</code></td>
+<td>28</td>
+<td>lon, lat, second, name</td>
+</tr>
+<tr class="even">
+<td>Code</td>
+<td><code>npestimator.m</code></td>
+<td>20</td>
+<td>lon</td>
+</tr>
+<tr class="odd">
+<td>Code</td>
+<td><code>permn.m</code></td>
+<td>4</td>
+<td>son, name, lat, second</td>
+</tr>
+<tr class="even">
+<td>Code</td>
+<td><code>postestimation_clean.m</code></td>
+<td>16</td>
+<td>lat, second, son, lon, url</td>
+</tr>
+<tr class="odd">
+<td>Code</td>
+<td><code>postmain_cfs.m</code></td>
+<td>1</td>
+<td>lat</td>
+</tr>
+<tr class="even">
+<td>Code</td>
+<td><code>pricechangebs.m</code></td>
+<td>1</td>
+<td>loc, location</td>
+</tr>
+<tr class="odd">
+<td>Code</td>
+<td><code>robustnesschecks.m</code></td>
+<td>6</td>
+<td>lat, lon</td>
+</tr>
+<tr class="even">
+<td>Code</td>
+<td><code>round1_quotescalibration.m</code></td>
+<td>8</td>
+<td>lat, lon</td>
+</tr>
+<tr class="odd">
+<td>Code</td>
+<td><code>smc_cfs_yin.m</code></td>
+<td>30</td>
+<td>lat, block, loc</td>
+</tr>
+<tr class="even">
+<td>Code</td>
+<td><code>truthfulpimmcheck.m</code></td>
+<td>3</td>
+<td>lat</td>
+</tr>
+<tr class="odd">
+<td>Code</td>
+<td><code>v_correction.m</code></td>
+<td>3</td>
+<td>lon</td>
+</tr>
+<tr class="even">
+<td>Code</td>
+<td><code>verify_env.m</code></td>
+<td>5</td>
+<td>block, loc, name</td>
+</tr>
+<tr class="odd">
+<td>Code</td>
+<td><code>weightedMedian.m</code></td>
+<td>4</td>
+<td>lat</td>
+</tr>
+<tr class="even">
+<td>Code</td>
+<td><code>weightedcorrs.m</code></td>
+<td>100</td>
+<td>lat, son, second, loc, location</td>
+</tr>
+<tr class="odd">
+<td>Code</td>
+<td><code>weightsolnpricespartialgridINTs1_yin.m</code></td>
+<td>1</td>
+<td>lon</td>
+</tr>
+</tbody>
+</table>
+<p><em>See <a href="report-pii-appendix.md">Appendix</a> for detailed listing of all flagged instances.</em></p>
+</section>
+<section id="file-paths-report" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="file-paths-report"><span class="header-section-number">7.1.2</span> File Paths Report</h3>
+<p><em>Generated on 2026-07-07T11:34:51.725</em></p>
+<p><strong>Warning</strong>: Our search on file path types is imperfect and incurs both type 1 and type 2 errors. We aim to strike a reasonable balance between both. The below table is therefore only indicative. Detailed listings can be found in the appendix to this report.</p>
+<p>In this table we analyse all files which contain source code (not data and documentation), and we report the grand total of each type of filepath we encountered.</p>
+<p>Please check and replace any <code>windows</code> filepaths with unix compliant paths, insofar as this is possible in your setup. (Notice that <code>STATA</code> allows <code>/</code> to be a filepath separator on a windows platform, hence this is a requirement for <em>all</em> <code>STATA</code> applications.)</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 22%">
+<col style="width: 19%">
+<col style="width: 20%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Files Analyzed</th>
+<th>Windows Paths</th>
+<th>Unix Paths</th>
+<th>Mixed Paths</th>
+<th>Drive Letters (<code>C:\</code> etc)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>62</td>
+<td>7</td>
+<td>19</td>
+<td>11</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="duplicate-files-report" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="duplicate-files-report"><span class="header-section-number">7.1.3</span> Duplicate Files Report</h3>
+<p>We did not find any duplicate files.</p>
+</section>
+<section id="zero-size-files-report" class="level3" data-number="7.1.4">
+<h3 data-number="7.1.4" class="anchored" data-anchor-id="zero-size-files-report"><span class="header-section-number">7.1.4</span> Zero Size Files Report</h3>
+<p>We did not find any zero sized files.</p>
+</section>
+<section id="large-files-report" class="level3" data-number="7.1.5">
+<h3 data-number="7.1.5" class="anchored" data-anchor-id="large-files-report"><span class="header-section-number">7.1.5</span> Large Files Report</h3>
+<p>We found the following files larger than 100MB:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Filename</th>
+<th style="text-align: right;">Size (MB)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">/CDS/confidential-data-not-for-publication/gosyop23q6grk5y1.csv</td>
+<td style="text-align: right;">129.31</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="code-description" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="code-description"><span class="header-section-number">7.2</span> Code description</h2>
+<p>There are provided 37 MATLAB, 1 of which is the master script (<code>code/main_cds.m</code>).</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>cloc</th>
+<th>github.com/AlDanial/cloc v 2.02 T=0.11 s (632.0 files/s, 228932.0 lines/s)</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Language</th>
+<th style="text-align: right;">files</th>
+<th style="text-align: right;">blank</th>
+<th style="text-align: right;">comment</th>
+<th style="text-align: right;">code</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CSV</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">14416</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MATLAB</td>
+<td style="text-align: right;">62</td>
+<td style="text-align: right;">1019</td>
+<td style="text-align: right;">1918</td>
+<td style="text-align: right;">6831</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Markdown</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">144</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">303</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">——–</td>
+<td style="text-align: right;">——–</td>
+<td style="text-align: right;">——–</td>
+<td style="text-align: right;">——–</td>
+<td style="text-align: right;">——–</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SUM:</td>
+<td style="text-align: right;">68</td>
+<td style="text-align: right;">1163</td>
+<td style="text-align: right;">1918</td>
+<td style="text-align: right;">21550</td>
+</tr>
+</tbody>
+</table>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="">The replication package contains a “main” or “master” file(s) which calls all other auxiliary programs.</label></li>
+</ul>
+</section>
+<section id="computing-environment-of-the-replicator" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="computing-environment-of-the-replicator"><span class="header-section-number">7.3</span> Computing Environment of the Replicator</h2>
+<p>Hardware:</p>
+<ul>
+<li>Nuvolos: Ubuntu 24.04.1 LTS, 16 vCPU + 16 GB RAM</li>
+</ul>
+<p>Software:</p>
+<ul>
+<li>Matlab R2023a with Intel compilers</li>
+</ul>
+</section>
+</section>
+<section id="replication" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Replication</h1>
+<ul>
+<li>Downloaded code and data from dropbox.</li>
+<li>Copied git repo and unzipped the replication package into this repo.</li>
+<li>Set up the computing environment on Nuvolos and scaled the hardware to 16 vCPU and 64 GB RAM.</li>
+<li>To address the authors’ Conditional Numerical Reproducibility (CNR) requirements, I injected two environment variables into the container’s <code>.bashrc</code> file (export <code>MKL_CBWR="AVX512"</code> and export <code>MATLAB_DISABLE_CBWR=1</code>)</li>
+<li>Modified <code>code/main_cds.m</code> to set <code>ncores = 16</code> to match the available cluster hardware as instructed in the <code>README.md</code></li>
+<li>Set working directory and ran the code with MatLab 2023a as per <code>README.md</code></li>
+<li>Committed changes</li>
+</ul>
+</section>
+<section id="sec-findings" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Findings</h1>
+<section id="data-preparation-code" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="data-preparation-code"><span class="header-section-number">9.1</span> Data Preparation Code</h2>
+<ul>
+<li>Program <code>main_cds.m</code> ran without errors. Output as expected with some differences due to MatLab version.</li>
+</ul>
+</section>
+<section id="tables-and-figures" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="tables-and-figures"><span class="header-section-number">9.2</span> Tables and Figures</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 32%">
+<col style="width: 17%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Figure/Table #</th>
+<th>Program</th>
+<th>Line Number</th>
+<th>Reproduced?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Figure 1A</td>
+<td>normalize_prices.m</td>
+<td>458</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Figure 1B</td>
+<td>normalize_prices.m</td>
+<td>469</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Figure 3</td>
+<td>/</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Figure 4 (left)</td>
+<td>postestimation_clean.m</td>
+<td>395</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Figure 4 (middle)</td>
+<td>postestimation_clean.m</td>
+<td>408</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Figure 4 (right)</td>
+<td>postestimation_clean.m</td>
+<td>416</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Table 1</td>
+<td>data_summary.m</td>
+<td>130</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Table 2</td>
+<td>data_summary.m</td>
+<td>158</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Table 3</td>
+<td>normalize_prices.m</td>
+<td>263</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Table 4</td>
+<td>postestimation_clean.m</td>
+<td>219</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Table 5</td>
+<td>postmain_cfs.m</td>
+<td>76</td>
+<td>No, see <a href="#fig-5" class="quarto-xref">Figure&nbsp;1</a></td>
+</tr>
+<tr class="even">
+<td>Table A.1</td>
+<td>normalize_prices.m</td>
+<td>437</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Table OS.1</td>
+<td>data_summary.m</td>
+<td>77</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Table OS.2</td>
+<td>data_summary.m</td>
+<td>305</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Table OS.3</td>
+<td>data_summary.m</td>
+<td>200</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Table OS.4</td>
+<td>normalize_prices.m</td>
+<td>326</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Table OS.5</td>
+<td>normalize_prices.m</td>
+<td>379</td>
+<td>No, see <a href="#fig-OS5" class="quarto-xref">Figure&nbsp;2</a></td>
+</tr>
+<tr class="even">
+<td>Table OS.6</td>
+<td>main_cds.m</td>
+<td>153</td>
+<td>No, see <a href="#fig-OS6" class="quarto-xref">Figure&nbsp;3</a></td>
+</tr>
+<tr class="odd">
+<td>Figure OS.3</td>
+<td>bondprices.m</td>
+<td>69</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Figure OS.4</td>
+<td>data_summary.m</td>
+<td>356</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Figure OS.5</td>
+<td>data_summary.m</td>
+<td>334</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Figure OS.6</td>
+<td>robustnesschecks.m</td>
+<td>25, 31</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Figure OS.7</td>
+<td>firststagebidding.m</td>
+<td>97</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Figure OS.8</td>
+<td>postestimation_clean.m</td>
+<td>330</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><code>Table 3.tex</code> presents a small issue with the character <code>\\$</code> for lines 10, 11, 12, 13, and 14.</p></li>
+<li><p>Table 5: estimates do not match</p></li>
+</ul>
+<div id="fig-5" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/table5_original.png" class="img-fluid figure-img"></p>
+<figcaption>Paper version</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/table5_replicated.png" class="img-fluid figure-img"></p>
+<figcaption>Replicated version</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Table OS.5
+</figcaption>
+</figure>
+</div>
+<div id="fig-OS5" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-OS5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tableOS5_original.png" class="img-fluid figure-img"></p>
+<figcaption>Paper version</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tableOS5_replicated.png" class="img-fluid figure-img"></p>
+<figcaption>Replicated version</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-OS5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Table OS.5
+</figcaption>
+</figure>
+</div>
+<ul>
+<li>Table OS.6: estimates do not match</li>
+</ul>
+<div id="fig-OS6" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-OS6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tableOS6_original.png" class="img-fluid figure-img"></p>
+<figcaption>Paper version</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tableOS6_replicated.png" class="img-fluid figure-img"></p>
+<figcaption>Replicated version</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-OS6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Table OS.6
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="in-text-numbers" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="in-text-numbers"><span class="header-section-number">9.3</span> In-Text Numbers</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>In-text numbers</th>
+<th>Program</th>
+<th>Line Number</th>
+<th>Reproduced?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Section 2 | Sample descriptives (N auctions, N bidders, NOI, etc.)</td>
+<td>normalize_prices.m</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Section 2 | Price cap statistic</td>
+<td>firststagebidding.m</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Section 6.1 | Status quo surplus bounds</td>
+<td>calculate_surplusraw.m</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Section 6.1 | Truthful bidding surplus bounds</td>
+<td>postestimation_clean.m</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Section 6.2 | Price bias (cents, %)</td>
+<td>postestimation_clean.m</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Section 6.3 | Risk SD, hedging effectiveness</td>
+<td>postestimation_clean.m</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Section 6.4 | Gain from full insurance</td>
+<td>postestimation_clean.m</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Section 7 | CF surplus, price bias, hedging</td>
+<td>postmain_cfs.m</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>Appendix C.2 | Risk aversion comparison</td>
+<td>riskaversion.m</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Appendix C.5.1 | Truthful reporting incentives</td>
+<td>truthfulpimmcheck.m</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Appendix C.5.1 | Quote manipulation calibration</td>
+<td>round1_quotescalibration.m</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Appendix C.6 | Customer orders robustness</td>
+<td>robustnesschecks.m</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Appendix C.7 | Bid shading with positions</td>
+<td>postestimation_clean.m</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Appendix D | CF robustness (volume caps, positions)</td>
+<td>smc_cfs_yin.m</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><label><input type="checkbox">In-text numbers not verified.</label></p></li>
+<li><p><label><input type="checkbox">There are no in-text numbers, or all in-text numbers stem from tables and figures.</label></p></li>
+<li><p><label><input type="checkbox">There are in-text numbers, but they are not identified in the code</label></p></li>
+<li><p>For Section 2, the log prints don’t match one of the in-text numbers:</p>
+<ul>
+<li>“Twenty five percent of bidders submit a first stage quantity order.”</li>
+</ul>
+<pre><code>========== SECTION 2: In-Text Descriptive Statistics ==========
+Fraction bidders submitting first stage quantity: 42.8%</code></pre></li>
+<li><p>For Section 6.4, the log prints don’t match one of the in-text numbers:</p>
+<ul>
+<li>“they would charge 1.8 basis points more for CDS coverage on a firm with a 2% default probability.”</li>
+</ul>
+<pre><code>========== SECTION 6.4: CDS Market Impact ==========
+Auction bias charge (basis points): 1.9 bps</code></pre></li>
+<li><p>For Section 7, the log prints don’t match one of the in-text numbers. Mean price, variance, covariance, and price bias are now close (small, computing-environment-level differences as the author describes), but the surplus bound is not:</p>
+<ul>
+<li>“The counterfactual leads to total surplus $[0.8,2.3]M.”</li>
+</ul>
+<pre><code> ========== SECTION 7: Counterfactual Surplus ==========
+Mean surplus ($M) [LB, UB]: [1.3, 4.1]
+Max surplus ($M) [LB, UB]: [2.6, 7.9]
+Min surplus ($M) [LB, UB]: [-0.1, 0.5]</code></pre></li>
+<li><p>For Appendix D.3, the log prints don’t match in-text numbers. Unlike Section 7, neither the price nor the std dev range improved in this run:</p>
+<ul>
+<li>“leads to expected prices of [35.26,35.46] and standard deviations of [0.93,1.18]”</li>
+</ul>
+<pre><code>========== APPENDIX D.3: Counterfactual with Changes in Positions ==========
+Expected price: [35.01, 35.23]
+Std dev:        [1.36, 1.52]</code></pre></li>
+</ul>
+</section>
+</section>
+<section id="classification" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Classification</h1>
+<ul class="task-list">
+<li><label><input type="checkbox">full reproduction</label></li>
+<li><label><input type="checkbox" checked="">full reproduction with minor issues</label></li>
+<li><label><input type="checkbox">partial reproduction (see above)</label></li>
+<li><label><input type="checkbox">not able to reproduce most or all of the results (reasons see above)</label></li>
+</ul>
+<section id="reason-for-incomplete-reproducibility" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="reason-for-incomplete-reproducibility"><span class="header-section-number">10.1</span> Reason for incomplete reproducibility</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">None.</label></li>
+<li><label><input type="checkbox" checked=""><code>Discrepancy in output</code> (either figures or numbers in tables or text differ)</label></li>
+<li><label><input type="checkbox"><code>Bugs in code</code> that were fixable by the replicator (but should be fixed in the final deposit)</label></li>
+<li><label><input type="checkbox"><code>Code missing</code>, in particular if it prevented the replicator from completing the reproducibility check</label>
+<ul class="task-list">
+<li><label><input type="checkbox"><code>Data preparation code missing</code> should be checked if the code missing seems to be data preparation code</label></li>
+</ul></li>
+<li><label><input type="checkbox"><code>Code not functional</code> is more severe than a simple bug: it prevented the replicator from completing the reproducibility check</label></li>
+<li><label><input type="checkbox"><code>Software not available to replicator</code> may happen for a variety of reasons, but in particular (a) when the software is commercial, and the replicator does not have access to a licensed copy, or (b) the software is open-source, but a specific version required to conduct the reproducibility check is not available.</label></li>
+<li><label><input type="checkbox"><code>Insufficient time available to replicator</code> is applicable when (a) running the code would take weeks or more (b) running the code might take less time if sufficient compute resources were to be brought to bear, but no such resources can be accessed in a timely fashion (c) the replication package is very complex, and following all (manual and scripted) steps would take too long.</label></li>
+<li><label><input type="checkbox"><code>Data missing</code> is marked when data <em>should</em> be available, but was erroneously not provided, or is not accessible via the procedures described in the replication package</label></li>
+<li><label><input type="checkbox"><code>Data not available</code> is marked when data requires additional access steps, for instance purchase or application procedure.</label></li>
+<li><label><input type="checkbox"><code>Missing README</code> is marked if there is no README to guide the replicator, or the README is not in compliance with JPE requirements</label></li>
+</ul>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
