@@ -25,6 +25,14 @@ Some useful information up front:
 
 In assessing compliance with our [Data and Code Availability Policy](https://www.journals.uchicago.edu/journals/jpe/datapolicy), our reproducibility team has identified the following issues, which we ask you to address:
 
+1. Table 5 is still not reproduced. Notice that your fix to check for environment with a certain checksum is not working (or it's not the root cause of this discrepancy.)
+2. Table OS.5 has a discrepancy for the SE of the intercept, Table OS.6. has significantly different estimates and point estimates. 
+3. The messages printed to your console are still not in line with what is printed in the paper.
+4. Your approach of blocking any system without AVX512 instructions to execute this is not admissible. While available on most HPC/cloud systems, you basically rule out everybody with a macbook M1/M2 chip to run your package. Intel stopped shipping chips for desktops with AVX512 in 2021 and only came back to it in 2026. Your restriction here is therefore not acceptable. I need you to modify this piece of code and convert the error in your `verify_env` script to a warning. I also need you to document very clearly in your readme, that - despite having the required AVX512 chipset, and the same MATLAB version you required - the JPE Data Editor was not able to reproduce the tables i referenced above. I need this exact reference to us following your instructions here. It is unfortunate for your work, and I am not trying you blame you for it, but it is a fact that those results are reproducibly only under some very peculiar circumstances, which we have not been able to create. This is not great, but it needs to be clearly documented. 
+5. I need you to be much more precise when you describe your computer where you produced those results. I want to read "the results in the paper were generated on this exact computing environment" and there you put the full specs of your computer. 
+6. After four very heavy rounds of this with my replicator, this will not go back to them. I want you to fix the remaining errors that we found, then the package will be published, with the qualification on items we were not able to reproduce mentioned above.
+   
+
 # General
 
 -   [x] Data Availability and Provenance Statements
@@ -62,7 +70,6 @@ In assessing compliance with our [Data and Code Availability Policy](https://www
 
 # Data description
 
-> {REPLICATOR} If the project has any confidential or restricted data, please leave the following statements here. If not, delete until next heading (`## Data Sources`).
 
 For any data that cannot be provided as part of the replication package, please provide the following information as part of the README.
 
@@ -93,14 +100,14 @@ For any data that cannot be provided as part of the replication package, please 
 ## Stated Requirements
 
 -   [ ] No requirements specified
--   [ ] Software Requirements specified as follows:
+-   [x] Software Requirements specified as follows:
     -   MATLAB R2023a
     -   Toolboxes: Statistics and Machine Learning Toolbox, Optimization Toolbox, Parallel Computing Toolbox
--   [ ] Computational Requirements specified as follows:
+-   [x] Computational Requirements specified as follows:
     -   Hardware: 20-core cluster node or 3--4 days desktop
     -   Storage: Sufficient space for large intermediate .mat files
     -   Requires 56GB storage.
--   [ ] Time Requirements specified as follows:
+-   [x] Time Requirements specified as follows:
     -   approximately 20 hours on a 20-core cluster node, or 3--4 days on a desktop
 -   [x] Requirements are complete.
 
